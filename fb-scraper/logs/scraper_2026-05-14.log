@@ -1,0 +1,779 @@
+[2026-05-14 16:33:53] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpnyx40b99\crawl_2026-05-14_16-33_test_page.xlsx (1 posts)
+[2026-05-14 16:33:53] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpjq1bjda_\crawl_2026-05-14_16-33_empty.xlsx (0 posts)
+[2026-05-14 16:33:53] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp_tler9fm\crawl_2026-05-14_16-33_test.xlsx (1 posts)
+[2026-05-14 16:33:53] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpivr_bgia\crawl_2026-05-14_16-33_mypage.xlsx (1 posts)
+[2026-05-14 16:33:53] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpb83ereoh\crawl_2026-05-14_16-33_mypage.xlsx (1 posts)
+[2026-05-14 16:35:55] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpw6mzdzo_\crawl_2026-05-14_16-33_overflow.xlsx (1 posts)
+[2026-05-14 16:35:58] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmprrhsktlu\crawl_2026-05-14_16-35_test.xlsx (1 posts)
+[2026-05-14 16:35:58] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpm3dvkps3\crawl_2026-05-14_16-35_test.xlsx (1 posts)
+[2026-05-14 16:35:58] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp8h9ovr60\crawl_2026-05-14_16-35_test.xlsx (1 posts)
+[2026-05-14 16:38:20] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp0abogkh2\crawl_2026-05-14_16-35_overflow.xlsx (50003 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp084l47at\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp5hvjr1yc\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp6fpsune1\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpj40b1b2i\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpt49x3ykq\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpbtxrf9u7\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpv04bi2ui\crawl_2026-05-14_16-38_test.xlsx (2 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpzgvydbqm\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpqnryo993\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp96u62tx_\crawl_2026-05-14_16-38_test.xlsx (3 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp3d66obgg\crawl_2026-05-14_16-38_test.xlsx (3 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpirpf7k18\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpl8nsgjdd\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:23] [DEBUG   ] [parsers.fb_parser] Không parse được timestamp: 'xyz abc 123 ???'
+[2026-05-14 16:38:49] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp1i5sgtsc\crawl_2026-05-14_16-38_test_page.xlsx (1 posts)
+[2026-05-14 16:38:49] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpugm9zdup\crawl_2026-05-14_16-38_empty.xlsx (0 posts)
+[2026-05-14 16:38:49] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpzbe6wk78\crawl_2026-05-14_16-38_test.xlsx (1 posts)
+[2026-05-14 16:38:49] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp8o592hvr\crawl_2026-05-14_16-38_mypage.xlsx (1 posts)
+[2026-05-14 16:38:49] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp1nbiitgy\crawl_2026-05-14_16-38_mypage.xlsx (1 posts)
+[2026-05-14 16:40:52] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpitvecokk\crawl_2026-05-14_16-38_overflow.xlsx (1 posts)
+[2026-05-14 16:40:54] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpwqx3g03u\crawl_2026-05-14_16-40_test.xlsx (1 posts)
+[2026-05-14 16:40:54] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpl95i3i5o\crawl_2026-05-14_16-40_test.xlsx (1 posts)
+[2026-05-14 16:40:54] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpxep81h4b\crawl_2026-05-14_16-40_test.xlsx (1 posts)
+[2026-05-14 16:43:18] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpcsjm33en\crawl_2026-05-14_16-40_overflow.xlsx (50003 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp2sriccdo\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp17h97cgg\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpttl12gco\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpwxzul0o_\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmp0rte7kph\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpelojkkc_\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpv9_x1c7n\crawl_2026-05-14_16-43_test.xlsx (2 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpmqbfvzjw\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmporvb7i09\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpst3tdqrg\crawl_2026-05-14_16-43_test.xlsx (3 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmph6ggn99a\crawl_2026-05-14_16-43_test.xlsx (3 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpiggvgs9r\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmptj2jsbu4\crawl_2026-05-14_16-43_test.xlsx (1 posts)
+[2026-05-14 16:43:21] [DEBUG   ] [parsers.fb_parser] Không parse được timestamp: 'xyz abc 123 ???'
+[2026-05-14 16:43:53] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\AppData\Local\Temp\tmpcecfn3j0\crawl_2026-05-14_16-43_empty.xlsx (0 posts)
+[2026-05-14 16:50:29] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 16:50:29] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 16:51:00] [WARNING ] [utils.helpers] Lần 1/3 thất bại (TargetClosedError): Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 5.0s...
+[2026-05-14 16:51:05] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 16:51:05] [WARNING ] [utils.helpers] Lần 2/3 thất bại (TargetClosedError): Page.goto: Target page, context or browser has been closed. Thử lại sau 10.0s...
+[2026-05-14 16:51:15] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 16:51:15] [ERROR   ] [utils.helpers] Tất cả 3 lần thử đều thất bại: Page.goto: Target page, context or browser has been closed
+[2026-05-14 16:51:44] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 16:51:44] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 16:52:17] [WARNING ] [utils.helpers] Lần 1/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 5.0s...
+[2026-05-14 16:52:22] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 16:52:54] [WARNING ] [utils.helpers] Lần 2/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 10.0s...
+[2026-05-14 16:53:04] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 16:53:09] [ERROR   ] [utils.helpers] Tất cả 3 lần thử đều thất bại: Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("#email")
+
+[2026-05-14 16:53:09] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 16:53:09] [ERROR   ] [__main__] Lỗi không mong đợi: Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("#email")
+Traceback (most recent call last):
+  File "C:\Users\PC\Projects\facebook_crawler\fb-scraper\src\main.py", line 196, in main
+    asyncio.run(cmd_login(config))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\PC\Projects\facebook_crawler\fb-scraper\src\main.py", line 45, in cmd_login
+    await session.login(page, config.fb_email, config.fb_password)
+  File "C:\Users\PC\Projects\facebook_crawler\fb-scraper\src\utils\helpers.py", line 52, in wrapper
+    raise last_error  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Projects\facebook_crawler\fb-scraper\src\utils\helpers.py", line 40, in wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Projects\facebook_crawler\fb-scraper\src\browser\session.py", line 129, in login
+    await page.fill("#email", email)
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\async_api\_generated.py", line 10493, in fill
+    await self._impl_obj.fill(
+    ...<6 lines>...
+    )
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_page.py", line 905, in fill
+    return await self._main_frame.fill(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_frame.py", line 607, in fill
+    await self._fill(**locals_to_params(locals()))
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_frame.py", line 619, in _fill
+    await self._channel.send("fill", self._timeout, locals_to_params(locals()))
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("#email")
+
+[2026-05-14 17:05:19] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:05:19] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:05:52] [WARNING ] [utils.helpers] Lần 1/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 5.0s...
+[2026-05-14 17:05:57] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:06:30] [WARNING ] [utils.helpers] Lần 2/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 10.0s...
+[2026-05-14 17:06:40] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:07:10] [ERROR   ] [utils.helpers] Tất cả 3 lần thử đều thất bại: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.facebook.com/login", waiting until "networkidle"
+
+[2026-05-14 17:07:24] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 17:07:24] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:07:25] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:07:57] [WARNING ] [utils.helpers] Lần 1/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 5.0s...
+[2026-05-14 17:08:02] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:08:04] [WARNING ] [utils.helpers] Lần 2/3 thất bại (TargetClosedError): Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.facebook.com/login", waiting until "networkidle"
+. Thử lại sau 10.0s...
+[2026-05-14 17:08:10] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 17:08:10] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:08:10] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:08:14] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:08:14] [ERROR   ] [utils.helpers] Tất cả 3 lần thử đều thất bại: Page.goto: Target page, context or browser has been closed
+[2026-05-14 17:08:43] [WARNING ] [utils.helpers] Lần 1/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 5.0s...
+[2026-05-14 17:08:48] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:08:52] [WARNING ] [utils.helpers] Lần 2/3 thất bại (TargetClosedError): Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 10.0s...
+[2026-05-14 17:09:02] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:09:02] [ERROR   ] [utils.helpers] Tất cả 3 lần thử đều thất bại: Page.goto: Target page, context or browser has been closed
+[2026-05-14 17:09:04] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 17:09:05] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:09:05] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:09:11] [WARNING ] [utils.helpers] Lần 1/3 thất bại (TargetClosedError): Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 5.0s...
+[2026-05-14 17:09:16] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:09:16] [WARNING ] [utils.helpers] Lần 2/3 thất bại (TargetClosedError): Page.goto: Target page, context or browser has been closed. Thử lại sau 10.0s...
+[2026-05-14 17:09:18] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 17:09:18] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:09:18] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:09:26] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:09:26] [ERROR   ] [utils.helpers] Tất cả 3 lần thử đều thất bại: Page.goto: Target page, context or browser has been closed
+[2026-05-14 17:09:51] [WARNING ] [utils.helpers] Lần 1/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 5.0s...
+[2026-05-14 17:09:56] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:10:28] [WARNING ] [utils.helpers] Lần 2/3 thất bại (TimeoutError): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#email")
+. Thử lại sau 10.0s...
+[2026-05-14 17:10:38] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:11:08] [ERROR   ] [utils.helpers] Tất cả 3 lần thử đều thất bại: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.facebook.com/login", waiting until "networkidle"
+
+[2026-05-14 17:17:40] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:17:40] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:19:06] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 17:19:06] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:19:06] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:23:19] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:23:19] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:23:20] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/
+[2026-05-14 17:23:20] [INFO    ] [browser.session] Đã có session, bỏ qua bước điền form
+[2026-05-14 17:23:20] [INFO    ] [browser.session] Đã lưu 4 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 17:23:57] [DEBUG   ] [browser.anti_detect] Delay 3.64s
+[2026-05-14 17:24:01] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 17:24:12] [DEBUG   ] [browser.anti_detect] Delay 3.42s
+[2026-05-14 17:24:15] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 17:24:33] [DEBUG   ] [browser.anti_detect] Delay 4.43s
+[2026-05-14 17:24:38] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 17:24:47] [DEBUG   ] [browser.anti_detect] Delay 3.62s
+[2026-05-14 17:24:51] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 17:25:04] [DEBUG   ] [browser.anti_detect] Delay 3.26s
+[2026-05-14 17:25:08] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 17:25:27] [DEBUG   ] [browser.anti_detect] Delay 2.70s
+[2026-05-14 17:30:39] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:30:39] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:30:40] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 17:35:33] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:35:33] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:35:34] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 17:36:32] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 17:36:33] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:36:33] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:36:34] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 17:40:01] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 17:40:02] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 17:40:02] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 17:40:35] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 17:40:35] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 17:41:18] [INFO    ] [browser.session] Đã lưu 7 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 17:41:40] [DEBUG   ] [browser.anti_detect] Delay 2.31s
+[2026-05-14 17:41:42] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 17:41:49] [DEBUG   ] [browser.anti_detect] Delay 2.10s
+[2026-05-14 17:41:51] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 17:42:03] [DEBUG   ] [browser.anti_detect] Delay 2.20s
+[2026-05-14 17:42:05] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 17:42:19] [DEBUG   ] [browser.anti_detect] Delay 1.75s
+[2026-05-14 17:42:21] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 17:42:33] [DEBUG   ] [browser.anti_detect] Delay 1.93s
+[2026-05-14 17:42:35] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 17:42:44] [DEBUG   ] [browser.anti_detect] Delay 1.72s
+[2026-05-14 17:42:46] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 17:42:52] [DEBUG   ] [browser.anti_detect] Delay 1.69s
+[2026-05-14 17:42:54] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 8 articles
+[2026-05-14 17:43:09] [DEBUG   ] [browser.anti_detect] Delay 2.03s
+[2026-05-14 17:43:11] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 8 articles
+[2026-05-14 17:43:18] [DEBUG   ] [browser.anti_detect] Delay 2.16s
+[2026-05-14 17:43:21] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 17:43:21] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666739654572779
+[2026-05-14 17:43:23] [DEBUG   ] [browser.anti_detect] Delay 1.02s
+[2026-05-14 17:43:55] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 17:43:56] [DEBUG   ] [scrapers.comment_scraper] Post 1666739654572779: 0 comments
+[2026-05-14 17:43:56] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666739507906127
+[2026-05-14 17:43:59] [DEBUG   ] [browser.anti_detect] Delay 1.24s
+[2026-05-14 17:44:32] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 17:44:32] [DEBUG   ] [scrapers.comment_scraper] Post 1666739507906127: 0 comments
+[2026-05-14 17:44:32] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666720111241400
+[2026-05-14 17:44:34] [DEBUG   ] [browser.anti_detect] Delay 1.27s
+[2026-05-14 17:45:07] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 17:45:07] [DEBUG   ] [scrapers.comment_scraper] Post 1666720111241400: 0 comments
+[2026-05-14 17:45:07] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1492815311965215
+[2026-05-14 17:45:09] [DEBUG   ] [browser.anti_detect] Delay 1.14s
+[2026-05-14 17:45:42] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 27
+[2026-05-14 17:45:42] [DEBUG   ] [scrapers.comment_scraper] Post 1492815311965215: 5 comments
+[2026-05-14 17:45:42] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666710824575662
+[2026-05-14 17:45:45] [DEBUG   ] [browser.anti_detect] Delay 1.19s
+[2026-05-14 17:46:17] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 17:46:17] [DEBUG   ] [scrapers.comment_scraper] Post 1666710824575662: 0 comments
+[2026-05-14 17:46:17] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666706451242766
+[2026-05-14 17:46:20] [DEBUG   ] [browser.anti_detect] Delay 1.44s
+[2026-05-14 17:46:52] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 7
+[2026-05-14 17:46:52] [DEBUG   ] [scrapers.comment_scraper] Post 1666706451242766: 2 comments
+[2026-05-14 17:46:52] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666697977910280
+[2026-05-14 17:46:54] [DEBUG   ] [browser.anti_detect] Delay 0.95s
+[2026-05-14 17:47:28] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 17:47:28] [DEBUG   ] [scrapers.comment_scraper] Post 1666697977910280: 0 comments
+[2026-05-14 17:47:28] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666614914585253
+[2026-05-14 17:47:30] [DEBUG   ] [browser.anti_detect] Delay 1.48s
+[2026-05-14 17:48:03] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 7
+[2026-05-14 17:48:03] [DEBUG   ] [scrapers.comment_scraper] Post 1666614914585253: 2 comments
+[2026-05-14 17:48:03] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666433864603358
+[2026-05-14 17:48:05] [DEBUG   ] [browser.anti_detect] Delay 0.81s
+[2026-05-14 17:48:38] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 7
+[2026-05-14 17:48:38] [DEBUG   ] [scrapers.comment_scraper] Post 1666433864603358: 2 comments
+[2026-05-14 17:48:38] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1666667774579967
+[2026-05-14 17:48:41] [DEBUG   ] [browser.anti_detect] Delay 0.89s
+[2026-05-14 17:49:13] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 17:49:13] [DEBUG   ] [scrapers.comment_scraper] Post 1666667774579967: 0 comments
+[2026-05-14 17:49:13] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_17-49_group_232834294629996.xlsx (10 posts)
+[2026-05-14 18:03:49] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 18:03:49] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 18:03:49] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 18:04:22] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 18:04:22] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 18:05:09] [INFO    ] [browser.session] Đã lưu 7 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 18:05:49] [DEBUG   ] [browser.anti_detect] Delay 2.83s
+[2026-05-14 18:05:52] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 3 articles
+[2026-05-14 18:06:06] [DEBUG   ] [browser.anti_detect] Delay 2.06s
+[2026-05-14 18:06:08] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 18:06:20] [DEBUG   ] [browser.anti_detect] Delay 2.87s
+[2026-05-14 18:06:23] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 18:06:31] [DEBUG   ] [browser.anti_detect] Delay 2.12s
+[2026-05-14 18:06:33] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 18:06:46] [DEBUG   ] [browser.anti_detect] Delay 2.39s
+[2026-05-14 18:06:48] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 18:07:05] [DEBUG   ] [browser.anti_detect] Delay 2.19s
+[2026-05-14 18:07:07] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 18:07:25] [DEBUG   ] [browser.anti_detect] Delay 2.79s
+[2026-05-14 18:07:28] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 18:07:40] [DEBUG   ] [browser.anti_detect] Delay 1.83s
+[2026-05-14 18:07:42] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 18:07:52] [DEBUG   ] [browser.anti_detect] Delay 2.87s
+[2026-05-14 18:07:55] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 8 articles
+[2026-05-14 18:08:04] [DEBUG   ] [browser.anti_detect] Delay 1.69s
+[2026-05-14 18:08:06] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 18:08:14] [DEBUG   ] [browser.anti_detect] Delay 2.84s
+[2026-05-14 18:08:17] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963530653777939
+[2026-05-14 18:08:20] [DEBUG   ] [browser.anti_detect] Delay 0.85s
+[2026-05-14 18:08:52] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 18:08:52] [DEBUG   ] [scrapers.comment_scraper] Post 3963530653777939: 0 comments
+[2026-05-14 18:08:52] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3960622704068734
+[2026-05-14 18:08:55] [DEBUG   ] [browser.anti_detect] Delay 1.40s
+[2026-05-14 18:09:28] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 15
+[2026-05-14 18:09:28] [DEBUG   ] [scrapers.comment_scraper] Post 3960622704068734: 6 comments
+[2026-05-14 18:09:28] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963322273798777
+[2026-05-14 18:09:30] [DEBUG   ] [browser.anti_detect] Delay 0.85s
+[2026-05-14 18:10:02] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 18:10:02] [DEBUG   ] [scrapers.comment_scraper] Post 3963322273798777: 20 comments
+[2026-05-14 18:10:02] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3961180714012933
+[2026-05-14 18:10:05] [DEBUG   ] [browser.anti_detect] Delay 1.50s
+[2026-05-14 18:10:38] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 18:10:38] [DEBUG   ] [scrapers.comment_scraper] Post 3961180714012933: 20 comments
+[2026-05-14 18:10:38] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963517693779235
+[2026-05-14 18:10:40] [DEBUG   ] [browser.anti_detect] Delay 0.94s
+[2026-05-14 18:11:13] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 7
+[2026-05-14 18:11:13] [DEBUG   ] [scrapers.comment_scraper] Post 3963517693779235: 2 comments
+[2026-05-14 18:11:13] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963515783779426
+[2026-05-14 18:11:16] [DEBUG   ] [browser.anti_detect] Delay 0.81s
+[2026-05-14 18:11:48] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 11
+[2026-05-14 18:11:48] [DEBUG   ] [scrapers.comment_scraper] Post 3963515783779426: 4 comments
+[2026-05-14 18:11:48] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3956994677764870
+[2026-05-14 18:11:50] [DEBUG   ] [browser.anti_detect] Delay 1.19s
+[2026-05-14 18:12:22] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 45
+[2026-05-14 18:12:23] [DEBUG   ] [scrapers.comment_scraper] Post 3956994677764870: 20 comments
+[2026-05-14 18:12:23] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963502123780792
+[2026-05-14 18:12:25] [DEBUG   ] [browser.anti_detect] Delay 0.93s
+[2026-05-14 18:12:58] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 18:12:58] [DEBUG   ] [scrapers.comment_scraper] Post 3963502123780792: 0 comments
+[2026-05-14 18:12:58] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963501490447522
+[2026-05-14 18:12:59] [DEBUG   ] [browser.anti_detect] Delay 0.95s
+[2026-05-14 18:13:32] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 18:13:32] [DEBUG   ] [scrapers.comment_scraper] Post 3963501490447522: 0 comments
+[2026-05-14 18:13:32] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_18-13_group_2325663947564626.xlsx (9 posts)
+[2026-05-14 18:17:19] [DEBUG   ] [browser.anti_detect] Delay 2.68s
+[2026-05-14 18:17:22] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 18:17:35] [DEBUG   ] [browser.anti_detect] Delay 2.57s
+[2026-05-14 18:17:38] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 18:17:53] [DEBUG   ] [browser.anti_detect] Delay 1.99s
+[2026-05-14 18:17:55] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 18:18:04] [DEBUG   ] [browser.anti_detect] Delay 1.89s
+[2026-05-14 18:18:06] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 6 articles
+[2026-05-14 18:18:19] [DEBUG   ] [browser.anti_detect] Delay 1.60s
+[2026-05-14 18:18:20] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 6 articles
+[2026-05-14 18:18:40] [DEBUG   ] [browser.anti_detect] Delay 2.61s
+[2026-05-14 18:18:42] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 18:18:54] [DEBUG   ] [browser.anti_detect] Delay 2.15s
+[2026-05-14 18:18:56] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 8 articles
+[2026-05-14 18:19:14] [DEBUG   ] [browser.anti_detect] Delay 2.11s
+[2026-05-14 18:19:16] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 8 articles
+[2026-05-14 18:19:24] [DEBUG   ] [browser.anti_detect] Delay 2.02s
+[2026-05-14 18:19:26] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 18:19:39] [DEBUG   ] [browser.anti_detect] Delay 1.67s
+[2026-05-14 18:19:41] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 18:19:55] [DEBUG   ] [browser.anti_detect] Delay 2.48s
+[2026-05-14 18:19:58] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_18-19_group_2325663947564626.xlsx (11 posts)
+[2026-05-14 18:23:49] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 18:23:49] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 18:23:51] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 18:24:23] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 18:24:23] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 18:25:55] [INFO    ] [browser.session] Đã lưu 5 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 18:26:21] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 18:26:21] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 18:26:21] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 18:26:22] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 18:26:55] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 18:26:55] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 18:28:26] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 18:28:26] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 18:28:26] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 18:28:27] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 18:28:59] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 18:28:59] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 18:29:45] [INFO    ] [browser.session] Đã lưu 5 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 18:30:08] [DEBUG   ] [browser.anti_detect] Delay 2.15s
+[2026-05-14 18:30:10] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 18:30:28] [DEBUG   ] [browser.anti_detect] Delay 2.85s
+[2026-05-14 18:30:31] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 18:30:41] [DEBUG   ] [browser.anti_detect] Delay 2.49s
+[2026-05-14 18:30:43] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 18:31:01] [DEBUG   ] [browser.anti_detect] Delay 1.63s
+[2026-05-14 18:31:03] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 18:31:03] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_18-31_group_2325663947564626.xlsx (1 posts)
+[2026-05-14 21:09:29] [DEBUG   ] [browser.anti_detect] Delay 2.16s
+[2026-05-14 21:09:31] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 21:09:39] [DEBUG   ] [browser.anti_detect] Delay 2.90s
+[2026-05-14 21:09:42] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 21:09:56] [DEBUG   ] [browser.anti_detect] Delay 1.52s
+[2026-05-14 21:09:58] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 21:10:15] [DEBUG   ] [browser.anti_detect] Delay 2.02s
+[2026-05-14 21:10:17] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 21:10:18] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_21-10_group_2325663947564626.xlsx (1 posts)
+[2026-05-14 21:10:30] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 21:10:43] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 21:10:43] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 21:10:44] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 21:11:17] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 21:11:17] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 21:12:13] [INFO    ] [browser.session] Đã lưu 8 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 21:12:33] [DEBUG   ] [browser.anti_detect] Delay 2.98s
+[2026-05-14 21:12:36] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 21:12:43] [DEBUG   ] [browser.anti_detect] Delay 2.63s
+[2026-05-14 21:12:45] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 4 articles
+[2026-05-14 21:12:46] [DEBUG   ] [browser.anti_detect] Delay 2.70s
+[2026-05-14 21:12:49] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 21:12:50] [DEBUG   ] [browser.anti_detect] Delay 1.96s
+[2026-05-14 21:12:52] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 6 articles
+[2026-05-14 21:12:53] [DEBUG   ] [browser.anti_detect] Delay 1.59s
+[2026-05-14 21:12:55] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 21:12:56] [DEBUG   ] [browser.anti_detect] Delay 2.71s
+[2026-05-14 21:12:58] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 21:12:59] [DEBUG   ] [browser.anti_detect] Delay 2.90s
+[2026-05-14 21:13:02] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 8 articles
+[2026-05-14 21:13:03] [DEBUG   ] [browser.anti_detect] Delay 2.50s
+[2026-05-14 21:13:05] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 21:13:06] [DEBUG   ] [browser.anti_detect] Delay 2.63s
+[2026-05-14 21:13:09] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 21:13:10] [DEBUG   ] [browser.anti_detect] Delay 2.10s
+[2026-05-14 21:13:12] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:13:13] [DEBUG   ] [browser.anti_detect] Delay 2.90s
+[2026-05-14 21:13:15] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:13:17] [DEBUG   ] [browser.anti_detect] Delay 1.96s
+[2026-05-14 21:13:19] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:13:20] [DEBUG   ] [browser.anti_detect] Delay 2.79s
+[2026-05-14 21:13:23] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 12 articles
+[2026-05-14 21:13:23] [DEBUG   ] [browser.anti_detect] Delay 2.08s
+[2026-05-14 21:13:25] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 12 articles
+[2026-05-14 21:13:27] [DEBUG   ] [browser.anti_detect] Delay 2.32s
+[2026-05-14 21:13:29] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 14 articles
+[2026-05-14 21:13:30] [DEBUG   ] [browser.anti_detect] Delay 2.52s
+[2026-05-14 21:13:32] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 14 articles
+[2026-05-14 21:13:33] [DEBUG   ] [browser.anti_detect] Delay 2.41s
+[2026-05-14 21:13:36] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 14 articles
+[2026-05-14 21:13:36] [DEBUG   ] [browser.anti_detect] Delay 2.66s
+[2026-05-14 21:13:39] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 14 articles
+[2026-05-14 21:13:39] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_21-13_group_2325663947564626.xlsx (14 posts)
+[2026-05-14 21:18:49] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 21:19:06] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 21:19:06] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 21:19:07] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 21:19:39] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 21:19:39] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 21:20:23] [INFO    ] [browser.session] Đã lưu 7 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 21:20:41] [DEBUG   ] [browser.anti_detect] Delay 2.74s
+[2026-05-14 21:20:44] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 21:20:57] [DEBUG   ] [browser.anti_detect] Delay 2.32s
+[2026-05-14 21:21:00] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 4 articles
+[2026-05-14 21:21:09] [DEBUG   ] [browser.anti_detect] Delay 2.71s
+[2026-05-14 21:21:12] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 21:21:27] [DEBUG   ] [browser.anti_detect] Delay 1.71s
+[2026-05-14 21:21:28] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 21:21:36] [DEBUG   ] [browser.anti_detect] Delay 2.96s
+[2026-05-14 21:21:39] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 6 articles
+[2026-05-14 21:21:55] [DEBUG   ] [browser.anti_detect] Delay 2.26s
+[2026-05-14 21:21:57] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 21:22:10] [DEBUG   ] [browser.anti_detect] Delay 2.48s
+[2026-05-14 21:22:12] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 10 articles
+[2026-05-14 21:22:22] [DEBUG   ] [browser.anti_detect] Delay 1.70s
+[2026-05-14 21:22:23] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 10 articles
+[2026-05-14 21:22:42] [DEBUG   ] [browser.anti_detect] Delay 2.11s
+[2026-05-14 21:22:44] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 10 articles
+[2026-05-14 21:22:45] [DEBUG   ] [browser.anti_detect] Delay 2.47s
+[2026-05-14 21:22:47] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 10 articles
+[2026-05-14 21:22:47] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_21-22_group_2325663947564626.xlsx (10 posts)
+[2026-05-14 21:23:06] [DEBUG   ] [browser.anti_detect] Delay 2.83s
+[2026-05-14 21:23:09] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 3 articles
+[2026-05-14 21:23:24] [DEBUG   ] [browser.anti_detect] Delay 2.29s
+[2026-05-14 21:23:26] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 4 articles
+[2026-05-14 21:23:33] [DEBUG   ] [browser.anti_detect] Delay 1.85s
+[2026-05-14 21:23:35] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 21:23:48] [DEBUG   ] [browser.anti_detect] Delay 2.32s
+[2026-05-14 21:23:50] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 21:24:07] [DEBUG   ] [browser.anti_detect] Delay 2.72s
+[2026-05-14 21:24:10] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 6 articles
+[2026-05-14 21:24:28] [DEBUG   ] [browser.anti_detect] Delay 1.75s
+[2026-05-14 21:24:30] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 6 articles
+[2026-05-14 21:24:45] [DEBUG   ] [browser.anti_detect] Delay 2.58s
+[2026-05-14 21:24:48] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 6 articles
+[2026-05-14 21:25:08] [DEBUG   ] [browser.anti_detect] Delay 2.83s
+[2026-05-14 21:25:10] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 21:25:27] [DEBUG   ] [browser.anti_detect] Delay 2.27s
+[2026-05-14 21:25:29] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 21:25:40] [DEBUG   ] [browser.anti_detect] Delay 2.74s
+[2026-05-14 21:25:43] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 21:26:00] [DEBUG   ] [browser.anti_detect] Delay 2.29s
+[2026-05-14 21:26:02] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:26:21] [DEBUG   ] [browser.anti_detect] Delay 2.81s
+[2026-05-14 21:26:24] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:26:33] [DEBUG   ] [browser.anti_detect] Delay 2.59s
+[2026-05-14 21:26:36] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:26:50] [DEBUG   ] [browser.anti_detect] Delay 1.73s
+[2026-05-14 21:26:52] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 12 articles
+[2026-05-14 21:27:04] [DEBUG   ] [browser.anti_detect] Delay 1.57s
+[2026-05-14 21:27:06] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 15 articles
+[2026-05-14 21:27:20] [DEBUG   ] [browser.anti_detect] Delay 2.33s
+[2026-05-14 21:27:23] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 15 articles
+[2026-05-14 21:27:31] [DEBUG   ] [browser.anti_detect] Delay 1.54s
+[2026-05-14 21:27:33] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 15 articles
+[2026-05-14 21:27:43] [DEBUG   ] [browser.anti_detect] Delay 1.87s
+[2026-05-14 21:27:45] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 15 articles
+[2026-05-14 21:27:45] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963766450421026
+[2026-05-14 21:27:53] [DEBUG   ] [browser.anti_detect] Delay 1.33s
+[2026-05-14 21:28:25] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 21:28:25] [DEBUG   ] [scrapers.comment_scraper] Post 3963766450421026: 0 comments
+[2026-05-14 21:28:25] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963761483754856
+[2026-05-14 21:28:27] [DEBUG   ] [browser.anti_detect] Delay 0.91s
+[2026-05-14 21:28:59] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 11
+[2026-05-14 21:28:59] [DEBUG   ] [scrapers.comment_scraper] Post 3963761483754856: 4 comments
+[2026-05-14 21:28:59] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963728107091527
+[2026-05-14 21:29:01] [DEBUG   ] [browser.anti_detect] Delay 1.26s
+[2026-05-14 21:29:34] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 31
+[2026-05-14 21:29:34] [DEBUG   ] [scrapers.comment_scraper] Post 3963728107091527: 14 comments
+[2026-05-14 21:29:34] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963735013757503
+[2026-05-14 21:29:36] [DEBUG   ] [browser.anti_detect] Delay 1.36s
+[2026-05-14 21:30:09] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 21:30:09] [DEBUG   ] [scrapers.comment_scraper] Post 3963735013757503: 20 comments
+[2026-05-14 21:30:09] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3962542100543461
+[2026-05-14 21:30:11] [DEBUG   ] [browser.anti_detect] Delay 1.38s
+[2026-05-14 21:30:44] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 21:30:45] [DEBUG   ] [scrapers.comment_scraper] Post 3962542100543461: 20 comments
+[2026-05-14 21:30:45] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3961180714012933
+[2026-05-14 21:30:47] [DEBUG   ] [browser.anti_detect] Delay 0.94s
+[2026-05-14 21:31:19] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 21:31:20] [DEBUG   ] [scrapers.comment_scraper] Post 3961180714012933: 20 comments
+[2026-05-14 21:31:20] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963671003763904
+[2026-05-14 21:31:22] [DEBUG   ] [browser.anti_detect] Delay 1.23s
+[2026-05-14 21:31:54] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 33
+[2026-05-14 21:31:55] [DEBUG   ] [scrapers.comment_scraper] Post 3963671003763904: 15 comments
+[2026-05-14 21:31:55] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963687510428920
+[2026-05-14 21:31:57] [DEBUG   ] [browser.anti_detect] Delay 0.89s
+[2026-05-14 21:32:29] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 19
+[2026-05-14 21:32:29] [DEBUG   ] [scrapers.comment_scraper] Post 3963687510428920: 8 comments
+[2026-05-14 21:32:29] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963039173827087
+[2026-05-14 21:32:31] [DEBUG   ] [browser.anti_detect] Delay 0.97s
+[2026-05-14 21:33:04] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 11
+[2026-05-14 21:33:04] [DEBUG   ] [scrapers.comment_scraper] Post 3963039173827087: 4 comments
+[2026-05-14 21:33:04] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963742617090076
+[2026-05-14 21:33:06] [DEBUG   ] [browser.anti_detect] Delay 1.19s
+[2026-05-14 21:33:39] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 7
+[2026-05-14 21:33:39] [DEBUG   ] [scrapers.comment_scraper] Post 3963742617090076: 2 comments
+[2026-05-14 21:33:39] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3962021693928835
+[2026-05-14 21:33:41] [DEBUG   ] [browser.anti_detect] Delay 1.24s
+[2026-05-14 21:34:14] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 21:34:14] [DEBUG   ] [scrapers.comment_scraper] Post 3962021693928835: 20 comments
+[2026-05-14 21:34:14] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963286930468978
+[2026-05-14 21:34:16] [DEBUG   ] [browser.anti_detect] Delay 0.98s
+[2026-05-14 21:34:49] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 11
+[2026-05-14 21:34:49] [DEBUG   ] [scrapers.comment_scraper] Post 3963286930468978: 4 comments
+[2026-05-14 21:34:49] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963501490447522
+[2026-05-14 21:34:51] [DEBUG   ] [browser.anti_detect] Delay 1.39s
+[2026-05-14 21:35:25] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 19
+[2026-05-14 21:35:25] [DEBUG   ] [scrapers.comment_scraper] Post 3963501490447522: 8 comments
+[2026-05-14 21:35:25] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3962967620500909
+[2026-05-14 21:35:27] [DEBUG   ] [browser.anti_detect] Delay 1.32s
+[2026-05-14 21:36:00] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 27
+[2026-05-14 21:36:00] [DEBUG   ] [scrapers.comment_scraper] Post 3962967620500909: 12 comments
+[2026-05-14 21:36:00] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963768000420871
+[2026-05-14 21:36:02] [DEBUG   ] [browser.anti_detect] Delay 0.97s
+[2026-05-14 21:36:35] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 21:36:35] [DEBUG   ] [scrapers.comment_scraper] Post 3963768000420871: 0 comments
+[2026-05-14 21:36:35] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_21-36_group_2325663947564626.xlsx (15 posts)
+[2026-05-14 21:50:15] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 21:50:32] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 21:50:32] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 21:50:33] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 21:51:06] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 21:51:06] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 21:52:59] [INFO    ] [browser.session] Đã lưu 9 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 21:53:30] [INFO    ] [browser.session] Browser đã đóng
+[2026-05-14 21:53:30] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-14 21:53:30] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-14 21:53:32] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-14 21:54:04] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-14 21:54:04] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-14 21:54:52] [INFO    ] [browser.session] Đã lưu 7 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-14 21:55:11] [DEBUG   ] [browser.anti_detect] Delay 2.68s
+[2026-05-14 21:55:14] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 1 articles
+[2026-05-14 21:55:21] [DEBUG   ] [browser.anti_detect] Delay 1.65s
+[2026-05-14 21:55:22] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 4 articles
+[2026-05-14 21:55:30] [DEBUG   ] [browser.anti_detect] Delay 2.13s
+[2026-05-14 21:55:32] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 21:55:46] [DEBUG   ] [browser.anti_detect] Delay 2.23s
+[2026-05-14 21:55:48] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 21:55:54] [DEBUG   ] [browser.anti_detect] Delay 2.46s
+[2026-05-14 21:55:56] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 21:56:08] [DEBUG   ] [browser.anti_detect] Delay 2.02s
+[2026-05-14 21:56:10] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 21:56:21] [DEBUG   ] [browser.anti_detect] Delay 2.67s
+[2026-05-14 21:56:24] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 8 articles
+[2026-05-14 21:56:32] [DEBUG   ] [browser.anti_detect] Delay 2.92s
+[2026-05-14 21:56:35] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:56:49] [DEBUG   ] [browser.anti_detect] Delay 2.68s
+[2026-05-14 21:56:52] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:57:04] [DEBUG   ] [browser.anti_detect] Delay 2.04s
+[2026-05-14 21:57:06] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:57:17] [DEBUG   ] [browser.anti_detect] Delay 1.58s
+[2026-05-14 21:57:19] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 21:57:19] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963671003763904
+[2026-05-14 21:57:22] [DEBUG   ] [browser.anti_detect] Delay 1.12s
+[2026-05-14 21:57:54] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 21:57:54] [DEBUG   ] [scrapers.comment_scraper] Post 3963671003763904: 20 comments
+[2026-05-14 21:57:54] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963786563752348
+[2026-05-14 21:57:57] [DEBUG   ] [browser.anti_detect] Delay 1.47s
+[2026-05-14 21:58:29] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 21:58:29] [DEBUG   ] [scrapers.comment_scraper] Post 3963786563752348: 0 comments
+[2026-05-14 21:58:29] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3961415173989487
+[2026-05-14 21:58:31] [DEBUG   ] [browser.anti_detect] Delay 0.96s
+[2026-05-14 21:59:04] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 27
+[2026-05-14 21:59:04] [DEBUG   ] [scrapers.comment_scraper] Post 3961415173989487: 12 comments
+[2026-05-14 21:59:04] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963672757097062
+[2026-05-14 21:59:06] [DEBUG   ] [browser.anti_detect] Delay 1.16s
+[2026-05-14 21:59:39] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 19
+[2026-05-14 21:59:39] [DEBUG   ] [scrapers.comment_scraper] Post 3963672757097062: 8 comments
+[2026-05-14 21:59:39] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3961180714012933
+[2026-05-14 21:59:41] [DEBUG   ] [browser.anti_detect] Delay 1.38s
+[2026-05-14 22:00:13] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 22:00:13] [DEBUG   ] [scrapers.comment_scraper] Post 3961180714012933: 20 comments
+[2026-05-14 22:00:13] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963735013757503
+[2026-05-14 22:00:15] [DEBUG   ] [browser.anti_detect] Delay 1.01s
+[2026-05-14 22:00:48] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 22:00:48] [DEBUG   ] [scrapers.comment_scraper] Post 3963735013757503: 20 comments
+[2026-05-14 22:00:48] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3962967620500909
+[2026-05-14 22:00:51] [DEBUG   ] [browser.anti_detect] Delay 0.86s
+[2026-05-14 22:01:23] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 27
+[2026-05-14 22:01:23] [DEBUG   ] [scrapers.comment_scraper] Post 3962967620500909: 12 comments
+[2026-05-14 22:01:23] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963501490447522
+[2026-05-14 22:01:26] [DEBUG   ] [browser.anti_detect] Delay 0.84s
+[2026-05-14 22:01:58] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 19
+[2026-05-14 22:01:59] [DEBUG   ] [scrapers.comment_scraper] Post 3963501490447522: 8 comments
+[2026-05-14 22:01:59] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963761483754856
+[2026-05-14 22:02:01] [DEBUG   ] [browser.anti_detect] Delay 1.30s
+[2026-05-14 22:02:34] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 15
+[2026-05-14 22:02:34] [DEBUG   ] [scrapers.comment_scraper] Post 3963761483754856: 6 comments
+[2026-05-14 22:02:34] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3963728107091527
+[2026-05-14 22:02:36] [DEBUG   ] [browser.anti_detect] Delay 1.10s
+[2026-05-14 22:03:09] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 22:03:09] [DEBUG   ] [scrapers.comment_scraper] Post 3963728107091527: 20 comments
+[2026-05-14 22:03:09] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 3962542100543461
+[2026-05-14 22:03:11] [DEBUG   ] [browser.anti_detect] Delay 1.30s
+[2026-05-14 22:03:44] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 43
+[2026-05-14 22:03:44] [DEBUG   ] [scrapers.comment_scraper] Post 3962542100543461: 20 comments
+[2026-05-14 22:03:44] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_22-03_group_2325663947564626.xlsx (11 posts)
+[2026-05-14 22:07:41] [DEBUG   ] [browser.anti_detect] Delay 2.73s
+[2026-05-14 22:07:44] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 3 articles
+[2026-05-14 22:07:53] [DEBUG   ] [browser.anti_detect] Delay 1.95s
+[2026-05-14 22:07:55] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 5 articles
+[2026-05-14 22:08:07] [DEBUG   ] [browser.anti_detect] Delay 2.69s
+[2026-05-14 22:08:10] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 22:08:23] [DEBUG   ] [browser.anti_detect] Delay 2.37s
+[2026-05-14 22:08:25] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 22:08:36] [DEBUG   ] [browser.anti_detect] Delay 1.71s
+[2026-05-14 22:08:38] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 7 articles
+[2026-05-14 22:08:48] [DEBUG   ] [browser.anti_detect] Delay 1.53s
+[2026-05-14 22:08:50] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 22:09:05] [DEBUG   ] [browser.anti_detect] Delay 2.13s
+[2026-05-14 22:09:07] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 22:09:22] [DEBUG   ] [browser.anti_detect] Delay 2.17s
+[2026-05-14 22:09:24] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 9 articles
+[2026-05-14 22:09:43] [DEBUG   ] [browser.anti_detect] Delay 1.99s
+[2026-05-14 22:09:45] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 10 articles
+[2026-05-14 22:10:04] [DEBUG   ] [browser.anti_detect] Delay 2.19s
+[2026-05-14 22:10:07] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 10 articles
+[2026-05-14 22:10:23] [DEBUG   ] [browser.anti_detect] Delay 2.09s
+[2026-05-14 22:10:25] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 11 articles
+[2026-05-14 22:10:32] [DEBUG   ] [browser.anti_detect] Delay 1.92s
+[2026-05-14 22:10:34] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 13 articles
+[2026-05-14 22:10:47] [DEBUG   ] [browser.anti_detect] Delay 2.47s
+[2026-05-14 22:10:49] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 13 articles
+[2026-05-14 22:10:58] [DEBUG   ] [browser.anti_detect] Delay 1.92s
+[2026-05-14 22:11:00] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 13 articles
+[2026-05-14 22:11:14] [DEBUG   ] [browser.anti_detect] Delay 2.82s
+[2026-05-14 22:11:17] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 15 articles
+[2026-05-14 22:11:30] [DEBUG   ] [browser.anti_detect] Delay 2.07s
+[2026-05-14 22:11:32] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 15 articles
+[2026-05-14 22:11:45] [DEBUG   ] [browser.anti_detect] Delay 2.41s
+[2026-05-14 22:11:47] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 18 articles
+[2026-05-14 22:12:07] [DEBUG   ] [browser.anti_detect] Delay 1.77s
+[2026-05-14 22:12:09] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 18 articles
+[2026-05-14 22:12:29] [DEBUG   ] [browser.anti_detect] Delay 2.38s
+[2026-05-14 22:12:32] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 18 articles
+[2026-05-14 22:12:51] [DEBUG   ] [browser.anti_detect] Delay 2.50s
+[2026-05-14 22:12:54] [DEBUG   ] [scrapers.post_scraper] Post container selector: '[role="article"][aria-posinset]' → 18 articles
+[2026-05-14 22:12:54] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925732391476676
+[2026-05-14 22:12:57] [DEBUG   ] [browser.anti_detect] Delay 1.03s
+[2026-05-14 22:13:29] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 23
+[2026-05-14 22:13:29] [DEBUG   ] [scrapers.comment_scraper] Post 1925732391476676: 10 comments
+[2026-05-14 22:13:29] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925911904792058
+[2026-05-14 22:13:31] [DEBUG   ] [browser.anti_detect] Delay 1.04s
+[2026-05-14 22:14:04] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:14:04] [DEBUG   ] [scrapers.comment_scraper] Post 1925911904792058: 0 comments
+[2026-05-14 22:14:04] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925912351458680
+[2026-05-14 22:14:07] [DEBUG   ] [browser.anti_detect] Delay 0.95s
+[2026-05-14 22:14:40] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:14:40] [DEBUG   ] [scrapers.comment_scraper] Post 1925912351458680: 0 comments
+[2026-05-14 22:14:40] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925916524791596
+[2026-05-14 22:14:42] [DEBUG   ] [browser.anti_detect] Delay 1.00s
+[2026-05-14 22:15:14] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:15:14] [DEBUG   ] [scrapers.comment_scraper] Post 1925916524791596: 0 comments
+[2026-05-14 22:15:14] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925916251458290
+[2026-05-14 22:15:16] [DEBUG   ] [browser.anti_detect] Delay 0.89s
+[2026-05-14 22:15:49] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:15:49] [DEBUG   ] [scrapers.comment_scraper] Post 1925916251458290: 0 comments
+[2026-05-14 22:15:49] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925916874791561
+[2026-05-14 22:15:51] [DEBUG   ] [browser.anti_detect] Delay 1.30s
+[2026-05-14 22:16:24] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:16:24] [DEBUG   ] [scrapers.comment_scraper] Post 1925916874791561: 0 comments
+[2026-05-14 22:16:24] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925925614790687
+[2026-05-14 22:16:27] [DEBUG   ] [browser.anti_detect] Delay 0.92s
+[2026-05-14 22:16:59] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:16:59] [DEBUG   ] [scrapers.comment_scraper] Post 1925925614790687: 0 comments
+[2026-05-14 22:16:59] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925971218119460
+[2026-05-14 22:17:01] [DEBUG   ] [browser.anti_detect] Delay 1.38s
+[2026-05-14 22:17:34] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:17:34] [DEBUG   ] [scrapers.comment_scraper] Post 1925971218119460: 0 comments
+[2026-05-14 22:17:34] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1925974071452508
+[2026-05-14 22:17:36] [DEBUG   ] [browser.anti_detect] Delay 0.96s
+[2026-05-14 22:18:09] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:18:09] [DEBUG   ] [scrapers.comment_scraper] Post 1925974071452508: 0 comments
+[2026-05-14 22:18:09] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926000398116542
+[2026-05-14 22:18:11] [DEBUG   ] [browser.anti_detect] Delay 1.25s
+[2026-05-14 22:18:44] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:18:44] [DEBUG   ] [scrapers.comment_scraper] Post 1926000398116542: 0 comments
+[2026-05-14 22:18:44] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926007128115869
+[2026-05-14 22:18:46] [DEBUG   ] [browser.anti_detect] Delay 0.95s
+[2026-05-14 22:19:18] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:19:18] [DEBUG   ] [scrapers.comment_scraper] Post 1926007128115869: 0 comments
+[2026-05-14 22:19:18] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926012644781984
+[2026-05-14 22:19:20] [DEBUG   ] [browser.anti_detect] Delay 1.49s
+[2026-05-14 22:19:53] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:19:53] [DEBUG   ] [scrapers.comment_scraper] Post 1926012644781984: 0 comments
+[2026-05-14 22:19:53] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926017188114863
+[2026-05-14 22:19:55] [DEBUG   ] [browser.anti_detect] Delay 1.28s
+[2026-05-14 22:20:28] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:20:28] [DEBUG   ] [scrapers.comment_scraper] Post 1926017188114863: 0 comments
+[2026-05-14 22:20:28] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926020354781213
+[2026-05-14 22:20:31] [DEBUG   ] [browser.anti_detect] Delay 1.34s
+[2026-05-14 22:21:04] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:21:04] [DEBUG   ] [scrapers.comment_scraper] Post 1926020354781213: 0 comments
+[2026-05-14 22:21:04] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926034854779763
+[2026-05-14 22:21:06] [DEBUG   ] [browser.anti_detect] Delay 1.41s
+[2026-05-14 22:21:39] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:21:39] [DEBUG   ] [scrapers.comment_scraper] Post 1926034854779763: 0 comments
+[2026-05-14 22:21:39] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926037581446157
+[2026-05-14 22:21:41] [DEBUG   ] [browser.anti_detect] Delay 0.92s
+[2026-05-14 22:22:14] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:22:14] [DEBUG   ] [scrapers.comment_scraper] Post 1926037581446157: 0 comments
+[2026-05-14 22:22:14] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926038871446028
+[2026-05-14 22:22:16] [DEBUG   ] [browser.anti_detect] Delay 1.43s
+[2026-05-14 22:22:49] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:22:49] [DEBUG   ] [scrapers.comment_scraper] Post 1926038871446028: 0 comments
+[2026-05-14 22:22:49] [DEBUG   ] [scrapers.comment_scraper] Cào comments post 1926041488112433
+[2026-05-14 22:22:51] [DEBUG   ] [browser.anti_detect] Delay 0.84s
+[2026-05-14 22:23:23] [DEBUG   ] [scrapers.comment_scraper] Comment selector: '[aria-label*="Bình luận"] > div' → 3
+[2026-05-14 22:23:23] [DEBUG   ] [scrapers.comment_scraper] Post 1926041488112433: 0 comments
+[2026-05-14 22:23:23] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-14_22-23_group_162204671162799.xlsx (18 posts)

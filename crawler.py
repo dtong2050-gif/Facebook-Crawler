@@ -29,8 +29,19 @@ _JS_EXTRACT_POSTS = r"""
   const results = [];
   const seen    = new Set();
 
-  // Chỉ lấy bài đăng chính — phân biệt với comment bằng aria-posinset
-  const articles = document.querySelectorAll('[role="article"][aria-posinset]');
+  // Thử selector theo thứ tự ưu tiên:
+  // 1. aria-posinset (layout cũ)
+  // 2. bài trong [role=feed] (layout mới)
+  // 3. tất cả article có link bài viết
+  let articles = Array.from(document.querySelectorAll('[role="article"][aria-posinset]'));
+  if (articles.length === 0) {
+    articles = Array.from(document.querySelectorAll('[role="feed"] [role="article"]'));
+  }
+  if (articles.length === 0) {
+    articles = Array.from(document.querySelectorAll('[role="article"]')).filter(a =>
+      a.querySelector('a[href*="/posts/"], a[href*="story_fbid"], a[href*="permalink/"]')
+    );
+  }
 
   for (const a of articles) {
     try {
@@ -123,12 +134,16 @@ _JS_EXTRACT_POSTS = r"""
 _JS_DEBUG_DOM = r"""
 (function() {
   function txt(el) { return el ? (el.textContent||'').trim().slice(0,60) : ''; }
-  const all     = document.querySelectorAll('[role="article"]');
-  const posts   = document.querySelectorAll('[role="article"][aria-posinset]');
-  const sample  = posts.length ? posts[0] : (all.length ? all[0] : null);
+  const all     = Array.from(document.querySelectorAll('[role="article"]'));
+  const posts   = Array.from(document.querySelectorAll('[role="article"][aria-posinset]'));
+  const feed    = Array.from(document.querySelectorAll('[role="feed"] [role="article"]'));
+  const withLink= all.filter(a => a.querySelector('a[href*="/posts/"],a[href*="story_fbid"],a[href*="permalink/"]'));
+  const sample  = posts[0] || feed[0] || withLink[0] || all[0] || null;
   return {
     totalArticles: all.length,
     postsWithPosinset: posts.length,
+    feedArticles: feed.length,
+    articlesWithLink: withLink.length,
     sampleTcLen: sample ? (sample.textContent||'').length : 0,
     samplePostLink: sample ? !!(sample.querySelector('a[href*="/posts/"],a[href*="story_fbid"]')) : false,
     sampleProfileName: sample ? txt(sample.querySelector('[data-ad-rendering-role="profile_name"]')) : '',
@@ -320,16 +335,44 @@ class FacebookCrawler:
             return False, f'Loi: {msg}', None
 
     def _get_user_name(self):
-        for sel in [
-            'div[role="banner"] svg ~ * span',
-            '[aria-label*="Trang ca nhan"] span',
-        ]:
+        selectors = [
+            # Link profile trong header
+            'div[role="banner"] a[aria-label] span',
+            # Avatar với tên
+            '[data-pagelet="LeftRail"] a[href*="profile"] span',
+            # Nav bar top
+            'div[role="navigation"] a[href*="facebook.com"] span[dir="auto"]',
+            # Fallback từ JS
+        ]
+        for sel in selectors:
             try:
-                txt = self.driver.find_element(By.CSS_SELECTOR, sel).text.strip()
-                if txt and len(txt) < 60:
-                    return txt
+                els = self.driver.find_elements(By.CSS_SELECTOR, sel)
+                for el in els:
+                    txt = el.text.strip()
+                    if txt and 3 < len(txt) < 60:
+                        return txt
             except Exception:
                 pass
+        # Thử JS để tìm tên
+        try:
+            name = self.driver.execute_script(r"""
+                const navLinks = document.querySelectorAll('div[role="banner"] a[href]');
+                for (const a of navLinks) {
+                    const span = a.querySelector('span');
+                    if (span) {
+                        const t = span.textContent.trim();
+                        if (t && t.length > 3 && t.length < 60) return t;
+                    }
+                }
+                // Tìm trong left sidebar
+                const profile = document.querySelector('[data-pagelet="ProfileActions"] span, [href*="/me/"] span');
+                if (profile) return profile.textContent.trim();
+                return null;
+            """)
+            if name and len(name) > 3:
+                return name
+        except Exception:
+            pass
         return 'Nguoi dung Facebook'
 
     # ── stop ────────────────────────────────────────────────────────────────
@@ -385,12 +428,12 @@ class FacebookCrawler:
                 if not raw:
                     d = self._js(_JS_DEBUG_DOM) or {}
                     add_log(
-                        f'[debug] totalArticles={d.get("totalArticles")} '
-                        f'postsWithPosinset={d.get("postsWithPosinset")} '
-                        f'tcLen={d.get("sampleTcLen")} '
+                        f'[debug] total={d.get("totalArticles")} '
+                        f'posinset={d.get("postsWithPosinset")} '
+                        f'feed={d.get("feedArticles")} '
+                        f'withLink={d.get("articlesWithLink")} '
                         f'postLink={d.get("samplePostLink")} '
-                        f'profile="{str(d.get("sampleProfileName",""))[:30]}" '
-                        f'story="{str(d.get("sampleStoryMsg",""))[:30]}"',
+                        f'profile="{str(d.get("sampleProfileName",""))[:30]}"',
                         'warn'
                     )
 
@@ -421,14 +464,14 @@ class FacebookCrawler:
                         "return document.querySelectorAll('[role=\"article\"]').length"
                     )
                     add_log(f'[debug] Tong [role=article] tren trang: {total_raw}', 'warn')
-                if no_new >= 6:
+                if no_new >= 10:
                     add_log('Khong con bai viet moi de tai', 'warn')
                     break
             else:
                 no_new = 0
 
-            self.driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
-            time.sleep(random.uniform(1.2, 2.0))
+            self.driver.execute_script('window.scrollBy(0, 900)')
+            time.sleep(random.uniform(2.5, 3.5))
 
         posts_list = list(posts_map.values())
         add_log(

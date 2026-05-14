@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python src/main.py *)",
+      "Bash(python -m pytest *)",
+      "Bash(pip install *)",
+      "Bash(playwright install *)",
+      "Read(**)",
+      "Write(src/**)",
+      "Write(tests/**)",
+      "Edit(src/**)",
+      "Edit(tests/**)",
+      "Edit(config.yaml)",
+      "Edit(.env)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[hook] File saved\""
+          }
+        ]
+      }
+    ]
+  }
+}

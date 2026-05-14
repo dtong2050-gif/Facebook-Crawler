@@ -1,0 +1,33 @@
+# Facebook Scraper Configuration
+# Xem .env.example để cấu hình credentials
+
+# Danh sách Facebook pages/groups cần cào
+# Bỏ comment và điền URL thật vào đây
+target_pages:
+  # - https://www.facebook.com/groups/123456789
+  # - https://www.facebook.com/vnexpress
+
+scraping:
+  # Số lần scroll xuống để load thêm bài (nhiều hơn = nhiều bài hơn, chậm hơn)
+  scroll_times: 10
+  # Delay ngẫu nhiên giữa các action (giây) - tăng nếu bị rate limit
+  delay_min: 1.5
+  delay_max: 3.0
+  # Số bài tối đa mỗi page
+  max_posts_per_page: 100
+  # Có cào comments không (false = chỉ cào posts, nhanh hơn nhiều)
+  include_comments: true
+
+export:
+  # Thư mục lưu file Excel output
+  output_dir: data/
+  # Pattern tên file (date và page_name được điền tự động)
+  filename_pattern: "crawl_{date}_{page_name}.xlsx"
+
+browser:
+  # false = hiện browser Chrome (KHUYẾN NGHỊ - ít bị detect hơn)
+  # true = chạy ngầm (nhanh hơn nhưng dễ bị block)
+  headless: false
+  # Kích thước viewport
+  viewport_width: 1366
+  viewport_height: 768

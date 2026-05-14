@@ -1,0 +1,47 @@
+# Secrets & credentials
+.env
+.env.local
+cookies/
+!cookies/.gitkeep
+
+# Output data
+data/*.xlsx
+data/*.csv
+!data/.gitkeep
+
+# Logs
+logs/*.log
+logs/screenshots/
+!logs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Claude private config (KHÔNG commit)
+.claude/CLAUDE.local.md
+.claude/settings.local.json
+.claude/memory.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Playwright
+playwright-report/
+test-results/
