@@ -11,8 +11,8 @@ scraping:
   # Số lần scroll xuống để load thêm bài (nhiều hơn = nhiều bài hơn, chậm hơn)
   scroll_times: 10
   # Delay ngẫu nhiên giữa các action (giây) - tăng nếu bị rate limit
-  delay_min: 1.5
-  delay_max: 3.0
+  delay_min: 0.6
+  delay_max: 1.2
   # Số bài tối đa mỗi page
   max_posts_per_page: 100
   # Có cào comments không (false = chỉ cào posts, nhanh hơn nhiều)

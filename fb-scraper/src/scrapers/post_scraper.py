@@ -65,7 +65,34 @@ _JS_EXTRACT_ALL_POSTS = r"""
         }
       }
 
-      results.push({ url, storyId, author, content });
+      // Số bình luận từ feed — dùng để bỏ qua bài không có comment ở Phase 2
+      // -1 = không xác định được (vẫn sẽ cào), 0 = chắc chắn không có comment
+      // Lưu ý: FB thường KHÔNG hiện "0 bình luận" — bài không comment sẽ ra -1
+      let commentCount = -1;
+      const parseNum = (s) => {
+        s = s.replace(/\./g, '').replace(/,/g, '');
+        const k = /k/i.test(s), mil = /m/i.test(s);
+        let n = parseFloat(s.replace(/[^\d.]/g, '')) || 0;
+        if (k) n *= 1000; if (mil) n *= 1000000;
+        return Math.round(n);
+      };
+      const reCmt = /(\d[\d.,]*\s*[km]?)\s*(bình luận|comment)/i;
+      // Thử aria-label trước (đáng tin cậy nhất)
+      for (const el of a.querySelectorAll('[aria-label]')) {
+        const m = (el.getAttribute('aria-label') || '').match(reCmt);
+        if (m) { commentCount = parseNum(m[1]); break; }
+      }
+      // Fallback: text của span/a/div[role=button] nhỏ gọn
+      if (commentCount === -1) {
+        for (const el of a.querySelectorAll('span, a, div[role="button"]')) {
+          const t = (el.textContent || '').trim();
+          if (t.length > 40) continue;
+          const m = t.match(reCmt);
+          if (m) { commentCount = parseNum(m[1]); break; }
+        }
+      }
+
+      results.push({ url, storyId, author, content, commentCount });
     } catch (e) {}
   }
   return results;
@@ -183,6 +210,7 @@ class PostScraper(BaseScraper):
                 url=url,
                 author=clean_text(item.get("author", "") or ""),
                 content=clean_text(item.get("content", "") or ""),
+                comment_count=int(item.get("commentCount") or -1),
             ))
         return posts
 
