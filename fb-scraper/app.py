@@ -205,7 +205,7 @@ async def _async_crawl(url: str, limit: int, max_comments: int) -> None:
                 "Vui lòng đăng xuất và đăng nhập lại."
             )
 
-        _log("[Phase 1] Bắt đầu thu thập bài viết... [v4-debug]")
+        _log("[Phase 1] Bắt đầu thu thập bài viết... [v5-balanced]")
         posts = []
         seen_ids: set[str] = set()
         no_new_streak = 0       # số lần scroll liên tiếp không có bài mới
@@ -255,24 +255,25 @@ async def _async_crawl(url: str, limit: int, max_comments: int) -> None:
 
             # Chiến lược scroll theo mức độ stuck
             if no_new_streak == 0:
-                # Tìm thấy bài mới — scroll tự nhiên
-                await natural_scroll(_page)
+                # Tìm thấy bài mới — scroll xa (2500px) để FB trả nhiều
+                # bài/lần fetch → ít vòng lặp + ít delay tổng cộng hơn
+                await natural_scroll(_page, distance=2500)
                 await random_delay(config.delay_min, config.delay_max)
             elif no_new_streak <= 4:
                 # Stuck nhẹ — wheel event mạnh (FB cần wheel events thật)
-                await _page.mouse.wheel(0, 2500)
-                await asyncio.sleep(2.5)
+                await _page.mouse.wheel(0, 3000)
+                await asyncio.sleep(1.5)
             else:
                 # Stuck nặng — kết hợp nhiều chiến lược
                 await _page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                await asyncio.sleep(0.6)
+                await asyncio.sleep(0.3)
                 try:
                     await _page.keyboard.press("End")
                 except Exception:
                     pass
-                await asyncio.sleep(0.6)
+                await asyncio.sleep(0.3)
                 await _page.mouse.wheel(0, 3500)
-                await asyncio.sleep(4.0)
+                await asyncio.sleep(2.0)
             scroll_num += 1
 
         posts = posts[:limit]
@@ -281,24 +282,165 @@ async def _async_crawl(url: str, limit: int, max_comments: int) -> None:
 
         # ── Phase 2: Thu thập bình luận ───────────────────────────────
         if max_comments > 0 and posts:
-            _log(f"[Phase 2] Bắt đầu lấy bình luận ({len(posts)} bài)...")
-            total_comments = 0
+            # Chẩn đoán: feed có phát hiện được số comment không?
+            n_has = sum(1 for p in posts if p.comment_count > 0)
+            n_zero = sum(1 for p in posts if p.comment_count == 0)
+            n_unknown = sum(1 for p in posts if p.comment_count == -1)
+            _log(
+                f"[Phase 2] Feed comment-count: {n_has} bài >0, "
+                f"{n_zero} bài =0, {n_unknown} bài không xác định"
+            )
 
-            for i, post in enumerate(posts):
-                await _await_unpause()
-                if _stop_flag.is_set():
-                    break
-                if post.url:
-                    post.comments = await comment_scraper.scrape(
-                        _page, post.url, post.post_id, max_comments
-                    )
-                    total_comments += len(post.comments)
-                    _set(comments=total_comments)
-                    _log(
-                        f"[Phase 2] Comment bai {i + 1}/{len(posts)}: "
-                        f"{len(post.comments)} bình luận"
-                    )
+            # Bỏ qua bài mà Phase 1 đã xác định được là 0 comment từ feed
+            posts_to_scrape = [p for p in posts if p.url and p.comment_count != 0]
+            skipped = len(posts) - len(posts_to_scrape)
+            _log(
+                f"[Phase 2] Bắt đầu lấy bình luận ({len(posts_to_scrape)} bài"
+                + (f", bỏ qua {skipped} bài 0 comment" if skipped else "") + ")..."
+            )
 
+            if posts_to_scrape:
+                WORKERS = 2          # số tab song song (tăng = nhanh hơn nhưng dễ bị block)
+                POST_TIMEOUT = 50    # timeout tổng mỗi bài (giây)
+                RECYCLE_EVERY = 40   # tạo lại tab sau mỗi N bài để chống rò rỉ RAM
+                MAX_STUCK = 5        # N bài treo liên tiếp → coi như browser chết, dừng sạch
+
+                worker_pages: list = []
+                try:
+                    for _ in range(WORKERS):
+                        worker_pages.append(await _session.new_page())
+
+                    queue: asyncio.Queue = asyncio.Queue()
+                    for post in posts_to_scrape:
+                        await queue.put(post)
+
+                    done = [0]
+
+                    async def _kill(pg) -> None:
+                        """Đóng tab, không để treo theo nếu browser đã chết."""
+                        try:
+                            await asyncio.wait_for(
+                                asyncio.shield(asyncio.ensure_future(pg.close())),
+                                timeout=10,
+                            )
+                        except Exception:
+                            pass
+
+                    async def _fresh_page(old):
+                        """Thay tab cũ bằng tab mới. Raise nếu không tạo nổi (browser chết)."""
+                        await _kill(old)
+                        return await asyncio.wait_for(
+                            asyncio.shield(asyncio.ensure_future(_session.new_page())),
+                            timeout=20,
+                        )
+
+                    async def _worker(wpage):
+                        since_recycle = 0
+                        stuck = 0
+                        while not _stop_flag.is_set():
+                            try:
+                                post = queue.get_nowait()
+                            except asyncio.QueueEmpty:
+                                break
+                            await _await_unpause()
+                            if _stop_flag.is_set():
+                                break
+
+                            if since_recycle >= RECYCLE_EVERY:
+                                try:
+                                    wpage = await _fresh_page(wpage)
+                                    since_recycle = 0
+                                except Exception:
+                                    _log(
+                                        "[Phase 2] Không tạo lại được tab — "
+                                        "trình duyệt có thể đã chết. Dừng & xuất dữ liệu.",
+                                        "error",
+                                    )
+                                    _stop_flag.set()
+                                    break
+
+                            # shield: wait_for hết giờ là trả về NGAY, không chờ
+                            # Playwright xác nhận hủy (điểm chết của bug bài-130).
+                            task = asyncio.ensure_future(
+                                comment_scraper.scrape(
+                                    wpage, post.url, post.post_id, max_comments
+                                )
+                            )
+                            try:
+                                post.comments = await asyncio.wait_for(
+                                    asyncio.shield(task), timeout=POST_TIMEOUT
+                                )
+                                stuck = 0
+                            except asyncio.TimeoutError:
+                                post.comments = []
+                                stuck += 1
+                                task.cancel()
+                                # nuốt exception của task bị bỏ rơi
+                                task.add_done_callback(
+                                    lambda t: t.cancelled() or t.exception()
+                                )
+                                _log(
+                                    f"[Phase 2] Bài {post.post_id[:14]}… quá hạn "
+                                    f"{POST_TIMEOUT}s — bỏ qua, tạo lại tab "
+                                    f"(treo {stuck}/{MAX_STUCK})",
+                                    "warn",
+                                )
+                                try:
+                                    wpage = await _fresh_page(wpage)
+                                    since_recycle = 0
+                                except Exception:
+                                    stuck = MAX_STUCK
+                                if stuck >= MAX_STUCK:
+                                    _log(
+                                        f"[Phase 2] {stuck} bài liên tiếp treo — "
+                                        "trình duyệt không phản hồi. Dừng & xuất "
+                                        "dữ liệu đã thu được.",
+                                        "error",
+                                    )
+                                    _stop_flag.set()
+                                    break
+                            except Exception as e:
+                                post.comments = []
+                                stuck = 0
+                                _log(
+                                    f"[Phase 2] Lỗi bài {post.post_id[:14]}…: "
+                                    f"{type(e).__name__}",
+                                    "warn",
+                                )
+
+                            since_recycle += 1
+                            done[0] += 1
+                            total_now = sum(len(p.comments) for p in posts)
+                            _set(comments=total_now)
+                            _log(
+                                f"[Phase 2] Bài {done[0]}/{len(posts_to_scrape)}: "
+                                f"{len(post.comments)} bình luận"
+                            )
+                            # Phát hiện FB chặn/redirect → dừng sạch, xuất dữ liệu đã có
+                            try:
+                                cur = wpage.url
+                            except Exception:
+                                cur = ""
+                            if "checkpoint" in cur or "/login" in cur:
+                                _log(
+                                    "⚠️ Facebook chặn/redirect — dừng Phase 2, "
+                                    "xuất dữ liệu đã thu được",
+                                    "warn",
+                                )
+                                _stop_flag.set()
+                                break
+
+                    # return_exceptions=True: 1 worker chết không kéo sập worker kia
+                    await asyncio.gather(
+                        *[_worker(p) for p in worker_pages],
+                        return_exceptions=True,
+                    )
+                finally:
+                    for p in worker_pages:
+                        await _kill(p)
+
+            total_comments = sum(len(p.comments) for p in posts)
+            _set(comments=total_comments)
             _log(f"[Phase 2] Hoàn thành: {total_comments} bình luận", "success")
 
         # ── Phase 3: Xuất Excel ───────────────────────────────────────
