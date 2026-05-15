@@ -221,3 +221,27 @@
 [2026-05-15 01:14:43] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-15_01-14_group_2325663947564626.xlsx (20 posts)
 [2026-05-15 01:15:49] [DEBUG   ] [browser.anti_detect] Delay 2.24s
 [2026-05-15 01:15:52] [DEBUG   ] [browser.anti_detect] Delay 1.87s
+[2026-05-15 01:22:11] [INFO    ] [browser.session] Browser đã khởi động
+[2026-05-15 01:22:11] [INFO    ] [browser.session] Đang điều hướng đến trang login...
+[2026-05-15 01:22:12] [INFO    ] [browser.session] URL sau goto: https://www.facebook.com/login
+[2026-05-15 01:22:45] [INFO    ] [browser.session] Dùng Enter để submit form đăng nhập
+[2026-05-15 01:22:45] [INFO    ] [browser.session] Đã click đăng nhập, đang chờ redirect...
+[2026-05-15 01:23:31] [INFO    ] [browser.session] Đã lưu 7 cookies → C:\Users\PC\Projects\facebook_crawler\fb-scraper\cookies\fb_cookies.json
+[2026-05-15 01:23:59] [DEBUG   ] [browser.anti_detect] Delay 2.69s
+[2026-05-15 01:24:21] [DEBUG   ] [browser.anti_detect] Delay 2.64s
+[2026-05-15 01:24:36] [DEBUG   ] [browser.anti_detect] Delay 2.22s
+[2026-05-15 01:24:57] [DEBUG   ] [browser.anti_detect] Delay 2.01s
+[2026-05-15 01:25:07] [DEBUG   ] [browser.anti_detect] Delay 2.90s
+[2026-05-15 01:25:22] [DEBUG   ] [browser.anti_detect] Delay 2.39s
+[2026-05-15 01:25:37] [DEBUG   ] [browser.anti_detect] Delay 1.63s
+[2026-05-15 01:25:59] [DEBUG   ] [browser.anti_detect] Delay 1.91s
+[2026-05-15 01:26:14] [DEBUG   ] [browser.anti_detect] Delay 2.92s
+[2026-05-15 01:26:27] [DEBUG   ] [browser.anti_detect] Delay 2.44s
+[2026-05-15 01:26:33] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-15_01-26_group_2325663947564626.xlsx (20 posts)
+[2026-05-15 01:26:42] [DEBUG   ] [browser.anti_detect] Delay 2.49s
+[2026-05-15 01:26:55] [DEBUG   ] [browser.anti_detect] Delay 1.51s
+[2026-05-15 01:27:12] [DEBUG   ] [browser.anti_detect] Delay 2.62s
+[2026-05-15 01:27:31] [DEBUG   ] [browser.anti_detect] Delay 2.00s
+[2026-05-15 01:27:45] [DEBUG   ] [browser.anti_detect] Delay 2.26s
+[2026-05-15 01:27:57] [DEBUG   ] [browser.anti_detect] Delay 2.49s
+[2026-05-15 01:27:59] [INFO    ] [exporters.excel_exporter] Đã export: C:\Users\PC\Projects\facebook_crawler\fb-scraper\data\crawl_2026-05-15_01-27_group_2325663947564626.xlsx (9 posts)
