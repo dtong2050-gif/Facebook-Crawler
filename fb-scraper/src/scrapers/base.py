@@ -23,6 +23,7 @@ class PostData:
     url: str
     author: str = ""
     content: str = ""
+    comment_count: int = -1  # -1 = unknown; 0 = confirmed empty from feed
     scraped_at: datetime = field(default_factory=datetime.now)
     comments: list[CommentData] = field(default_factory=list)
 

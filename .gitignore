@@ -18,6 +18,11 @@ env/
 *.xlsx
 *.csv
 
+# Secrets & runtime — KHÔNG commit phiên đăng nhập / log
+fb-scraper/cookies/fb_cookies.json
+fb-scraper/logs/*.log
+*.log
+
 # Chrome / Selenium
 chromedriver*
 chrome_profile/
