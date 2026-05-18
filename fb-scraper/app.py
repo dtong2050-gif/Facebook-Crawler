@@ -185,8 +185,13 @@ async def _await_unpause() -> None:
         _log("▶ Tiếp tục crawl", "info")
 
 
-async def _async_crawl(url: str, limit: int, max_comments: int) -> None:
-    """Crawl bài viết và comments, cập nhật _state sau mỗi bước."""
+async def _async_crawl(
+    url: str, limit: int, max_comments: int, mode: str = "group"
+) -> None:
+    """Crawl bài viết và comments, cập nhật _state sau mỗi bước.
+
+    mode: "group" (mặc định, hành vi cũ) hoặc "fanpage".
+    """
     config = Config()
     post_scraper = PostScraper(config)
     comment_scraper = CommentScraper(config)
@@ -205,7 +210,8 @@ async def _async_crawl(url: str, limit: int, max_comments: int) -> None:
                 "Vui lòng đăng xuất và đăng nhập lại."
             )
 
-        _log("[Phase 1] Bắt đầu thu thập bài viết... [v5-balanced]")
+        mode_label = "Fanpage" if mode == "fanpage" else "Group"
+        _log(f"[Phase 1] Bắt đầu thu thập bài viết... [v5-balanced · {mode_label}]")
         posts = []
         seen_ids: set[str] = set()
         no_new_streak = 0       # số lần scroll liên tiếp không có bài mới
@@ -220,7 +226,7 @@ async def _async_crawl(url: str, limit: int, max_comments: int) -> None:
             if _stop_flag.is_set():
                 break
 
-            batch = await post_scraper._extract_posts_from_page(_page)
+            batch = await post_scraper._extract_posts_from_page(_page, mode)
             added = 0
             for post in batch:
                 if post.post_id not in seen_ids:
@@ -252,6 +258,25 @@ async def _async_crawl(url: str, limit: int, max_comments: int) -> None:
 
             if len(posts) >= limit:
                 break
+
+            # ── Fanpage: feed lazy-load khi article cuối lọt viewport ──────
+            # Scroll riêng — đưa article cuối vào tầm nhìn để FB fetch thêm,
+            # rồi xuống đáy document. Group dùng nhánh cũ bên dưới.
+            if mode == "fanpage":
+                await _page.evaluate(
+                    """() => {
+                        const a = document.querySelectorAll('[role="article"]');
+                        if (a.length) a[a.length - 1].scrollIntoView(
+                            { block: 'end', behavior: 'instant' });
+                        window.scrollTo(0, document.body.scrollHeight);
+                    }"""
+                )
+                await asyncio.sleep(0.4)
+                await _page.mouse.wheel(0, 3000)
+                # Stuck lâu → đợi lâu hơn cho FB render xong batch mới
+                await asyncio.sleep(2.2 if no_new_streak >= 3 else 1.4)
+                scroll_num += 1
+                continue
 
             # Chiến lược scroll theo mức độ stuck
             if no_new_streak == 0:
@@ -531,16 +556,17 @@ def api_crawl():
     url = (data.get("url") or "").strip()
     limit = min(int(data.get("limit") or 100), 10_000)
     max_comments = min(int(data.get("max_comments") or 0), 2_000)
+    mode = "fanpage" if (data.get("mode") or "group").strip() == "fanpage" else "group"
 
     if not url:
-        return jsonify(success=False, message="Vui lòng nhập link group"), 400
+        return jsonify(success=False, message="Vui lòng nhập link"), 400
 
     _stop_flag.clear()
     _pause_flag.clear()
     _set(status="running", posts=0, comments=0, logs=[], file_path=None, error=None)
-    _log(f"Bắt đầu crawl: {url}")
+    _log(f"Bắt đầu crawl ({'Fanpage' if mode == 'fanpage' else 'Group'}): {url}")
 
-    fire_async(_async_crawl(url, limit, max_comments))
+    fire_async(_async_crawl(url, limit, max_comments, mode))
     return jsonify(success=True)
 
 

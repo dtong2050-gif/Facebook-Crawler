@@ -149,7 +149,21 @@
 
     <!-- ---- URL input card ---- -->
     <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
-      <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Link Group hoặc Page Facebook</label>
+      <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Chế độ crawl</label>
+
+      <!-- Mode toggle: Group / Fanpage -->
+      <div class="inline-flex p-1 mb-4 bg-gray-800 border border-gray-700 rounded-lg">
+        <button id="modeGroupBtn" type="button" onclick="setMode('group')"
+          class="px-4 py-1.5 text-sm font-medium rounded-md transition bg-blue-600 text-white">
+          Bài viết Group
+        </button>
+        <button id="modeFanpageBtn" type="button" onclick="setMode('fanpage')"
+          class="px-4 py-1.5 text-sm font-medium rounded-md transition text-gray-400 hover:text-gray-200">
+          Bài viết Fanpage
+        </button>
+      </div>
+
+      <label id="urlLabel" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Link Group Facebook</label>
 
       <div class="flex gap-3">
         <div class="flex-1 relative">
@@ -314,6 +328,7 @@ let clockTimer  = null;
 let elapsed     = 0;
 let lastLogLen  = 0;
 let isCrawling  = false;
+let crawlMode   = 'group';   // 'group' | 'fanpage'
 
 /* ========== helpers ========== */
 
@@ -417,6 +432,25 @@ async function doLogin() {
 
 /* ========== crawler screen ========== */
 
+function setMode(mode) {
+  if (isCrawling) return;          // không đổi chế độ khi đang crawl
+  crawlMode = mode === 'fanpage' ? 'fanpage' : 'group';
+
+  const on  = 'bg-blue-600 text-white';
+  const off = 'text-gray-400 hover:text-gray-200';
+  const g = el('modeGroupBtn'), f = el('modeFanpageBtn');
+  g.className = `px-4 py-1.5 text-sm font-medium rounded-md transition ${crawlMode === 'group' ? on : off}`;
+  f.className = `px-4 py-1.5 text-sm font-medium rounded-md transition ${crawlMode === 'fanpage' ? on : off}`;
+
+  if (crawlMode === 'fanpage') {
+    el('urlLabel').textContent      = 'Link Fanpage Facebook';
+    el('groupUrl').placeholder      = 'https://www.facebook.com/tenfanpage';
+  } else {
+    el('urlLabel').textContent      = 'Link Group Facebook';
+    el('groupUrl').placeholder      = 'https://www.facebook.com/groups/tengroup';
+  }
+}
+
 function transitionToCrawler(userName) {
   el('userNameBadge').textContent = userName || 'Facebook User';
   el('userAvatar').textContent    = (userName || 'F')[0].toUpperCase();
@@ -463,7 +497,7 @@ async function startCrawl() {
 
   startClock();
 
-  const res = await api('/api/crawl', 'POST', { url, limit, max_comments: maxComments });
+  const res = await api('/api/crawl', 'POST', { url, limit, max_comments: maxComments, mode: crawlMode });
   if (!res.success) {
     alert(res.message || 'Không thể bắt đầu crawl');
     resetBtn();
