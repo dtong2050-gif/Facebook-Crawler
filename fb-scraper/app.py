@@ -210,7 +210,7 @@ async def _async_crawl(
                 "Vui lòng đăng xuất và đăng nhập lại."
             )
 
-        mode_label = "Fanpage" if mode == "fanpage" else "Group"
+        mode_label = {"fanpage": "Fanpage", "search": "Tìm kiếm"}.get(mode, "Group")
         _log(f"[Phase 1] Bắt đầu thu thập bài viết... [v5-balanced · {mode_label}]")
         posts = []
         seen_ids: set[str] = set()
@@ -259,10 +259,10 @@ async def _async_crawl(
             if len(posts) >= limit:
                 break
 
-            # ── Fanpage: feed lazy-load khi article cuối lọt viewport ──────
+            # ── Fanpage / Search: feed lazy-load khi article cuối lọt viewport ──────
             # Scroll riêng — đưa article cuối vào tầm nhìn để FB fetch thêm,
             # rồi xuống đáy document. Group dùng nhánh cũ bên dưới.
-            if mode == "fanpage":
+            if mode in ("fanpage", "search"):
                 await _page.evaluate(
                     """() => {
                         const a = document.querySelectorAll('[role="article"]');
@@ -472,9 +472,14 @@ async def _async_crawl(
         # Luôn export nếu có ít nhất 1 bài — dù người dùng bấm "Ngừng & xuất Excel"
         stopped = _stop_flag.is_set()
         if not posts:
+            # Phải luôn set terminal status — nếu không, status mắc kẹt ở
+            # 'running' khiến polling không bao giờ dừng, đồng hồ tiếp tục đếm.
             if stopped:
                 _set(status="stopped")
                 _log("Đã dừng — chưa có bài viết nào để xuất.", "warn")
+            else:
+                _set(status="done")
+                _log("Crawl xong nhưng không có bài viết nào.", "warn")
             return
 
         _log(f"[Phase 3] Đang tạo file Excel ({'một phần' if stopped else 'đầy đủ'})...")
@@ -556,7 +561,8 @@ def api_crawl():
     url = (data.get("url") or "").strip()
     limit = min(int(data.get("limit") or 100), 10_000)
     max_comments = min(int(data.get("max_comments") or 0), 2_000)
-    mode = "fanpage" if (data.get("mode") or "group").strip() == "fanpage" else "group"
+    mode_raw = (data.get("mode") or "group").strip()
+    mode = mode_raw if mode_raw in ("group", "fanpage", "search") else "group"
 
     if not url:
         return jsonify(success=False, message="Vui lòng nhập link"), 400
@@ -564,7 +570,8 @@ def api_crawl():
     _stop_flag.clear()
     _pause_flag.clear()
     _set(status="running", posts=0, comments=0, logs=[], file_path=None, error=None)
-    _log(f"Bắt đầu crawl ({'Fanpage' if mode == 'fanpage' else 'Group'}): {url}")
+    mode_label = {"fanpage": "Fanpage", "search": "Tìm kiếm từ khóa"}.get(mode, "Group")
+    _log(f"Bắt đầu crawl ({mode_label}): {url}")
 
     fire_async(_async_crawl(url, limit, max_comments, mode))
     return jsonify(success=True)
@@ -593,6 +600,20 @@ def api_stop():
     _stop_flag.set()
     _pause_flag.clear()  # nếu đang pause thì release để vòng lặp tiếp tục → thoát
     _log("Người dùng dừng crawl — sẽ xuất Excel với dữ liệu đã thu được", "warn")
+    return jsonify(success=True)
+
+
+@app.post("/api/reset")
+def api_reset():
+    """Cưỡng bức đưa state về idle khi UI bị kẹt ở trạng thái 'running' do
+    crawl cũ không kết thúc đúng cách (browser đóng giữa chừng, app restart...).
+    KHÔNG động đến browser session — chỉ reset state dict."""
+    _stop_flag.clear()
+    _pause_flag.clear()
+    _set(
+        status="idle", posts=0, comments=0, logs=[],
+        file_path=None, error=None,
+    )
     return jsonify(success=True)
 
 

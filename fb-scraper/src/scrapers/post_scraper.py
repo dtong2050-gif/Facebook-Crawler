@@ -242,6 +242,171 @@ _JS_EXTRACT_FANPAGE_POSTS = r"""
 """
 
 
+# ──────────────────────────────────────────────────────────────────────────────
+# SEARCH extractor — dùng khi crawl theo từ khóa tìm kiếm.
+#
+# Khác biệt so với group/fanpage:
+#  - Trang: facebook.com/search/posts/?q=...
+#  - Mỗi bài đến từ nhiều nguồn khác nhau (group, page, cá nhân)
+#  - Cần extract thêm "source" = tên group/page chứa bài đó
+#  - URL bài viết có thể dạng /groups/<id>/permalink/<postId>
+#    hoặc /<page>/posts/<pfbid> (giống fanpage)
+# ──────────────────────────────────────────────────────────────────────────────
+_JS_EXTRACT_SEARCH_POSTS = r"""
+() => {
+  const txt = (el) => el ? (el.textContent || '').trim() : '';
+
+  const parseNum = (s) => {
+    s = s.replace(/\./g, '').replace(/,/g, '');
+    const k = /k/i.test(s), mil = /m/i.test(s);
+    let n = parseFloat(s.replace(/[^\d.]/g, '')) || 0;
+    if (k) n *= 1000; if (mil) n *= 1000000;
+    return Math.round(n);
+  };
+  const reCmt = /(\d[\d.,]*\s*[km]?)\s*(bình luận|comment)/i;
+
+  const hash = (s) => {
+    let h = 5381;
+    for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+    return 'h' + (h >>> 0).toString(36);
+  };
+
+  const cleanUrl = (u) => u ? u.split('?fbclid')[0].split('&__')[0] : '';
+
+  const isPostLink = (href) => {
+    if (!href) return false;
+    return /\/posts\/|story_fbid|fbid=|\/videos\/|\/photo|story\.php|permalink/i.test(href)
+        || /pfbid[0-9A-Za-z]{10,}/.test(href)
+        || /\/groups\/.+\/permalink/i.test(href);
+  };
+
+  const seen = new Set();
+  const candidates = [];
+  const add = (el) => { if (el && !seen.has(el)) { seen.add(el); candidates.push(el); } };
+  document.querySelectorAll('[role="feed"] [role="article"]').forEach(add);
+  document.querySelectorAll('[role="article"][aria-posinset]').forEach(add);
+  if (candidates.length === 0) document.querySelectorAll('[role="article"]').forEach(add);
+
+  const results = [];
+  for (const a of candidates) {
+    try {
+      // ── URL bài viết ──────────────────────────────────────────────────────
+      let url = '';
+      for (const link of a.querySelectorAll('a[href]')) {
+        if (isPostLink(link.href)) { url = cleanUrl(link.href); break; }
+      }
+
+      // ── postId ─────────────────────────────────────────────────────────────
+      let postId = '';
+      if (url) {
+        const mPfbid = url.match(/pfbid[0-9A-Za-z]+/);
+        if (mPfbid) {
+          postId = mPfbid[0];
+        } else {
+          const mNum = url.match(
+            /\/posts\/(\d+)|story_fbid=(\d+)|[?&]fbid=(\d+)|permalink\/(\d+)|\/(\d{10,})/
+          );
+          if (mNum) postId = mNum[1] || mNum[2] || mNum[3] || mNum[4] || mNum[5];
+        }
+      }
+
+      // ── Tác giả + Nguồn (group/page) ──────────────────────────────────────
+      // Heading search result thường dạng:
+      //   "Tên người đăng" hoặc "Tên người đăng > Tên Group"
+      // Các link trong heading: [0] = tác giả, [last] = group/page (nếu có)
+      let author = '', source = '';
+      const h = a.querySelector('h2, h3, h4');
+      if (h) {
+        const links = Array.from(h.querySelectorAll('a[role="link"], a'));
+        if (links.length >= 2) {
+          author = (links[0].innerText || '').split('\n')[0].trim();
+          const lastLink = links[links.length - 1];
+          const lastText = (lastLink.innerText || '').split('\n')[0].trim();
+          if (lastText !== author) source = lastText;
+        } else if (links.length === 1) {
+          author = (links[0].innerText || '').split('\n')[0].trim();
+        } else {
+          author = txt(h).split('\n')[0].trim();
+        }
+      }
+      // Fallback nguồn: tìm link có href /groups/ hoặc /pages/
+      if (!source) {
+        for (const link of a.querySelectorAll('a[href]')) {
+          if (/\/groups\/|\/pages\//.test(link.href) && !isPostLink(link.href)) {
+            source = (link.innerText || '').split('\n')[0].trim();
+            if (source) break;
+          }
+        }
+      }
+
+      // ── Nội dung ──────────────────────────────────────────────────────────
+      let content = '';
+      const msg = a.querySelector('[data-ad-preview="message"], [data-testid="post_message"]');
+      if (msg) content = txt(msg);
+      if (!content) {
+        for (const el of a.querySelectorAll('[dir="auto"]')) {
+          const t = txt(el);
+          if (t.length > content.length) content = t;
+        }
+      }
+
+      if (!url && content.length < 5) continue;
+
+      if (!postId) {
+        postId = hash((author || '') + '|' + content.slice(0, 120));
+      }
+
+      // ── Số bình luận ──────────────────────────────────────────────────────
+      let commentCount = -1;
+      for (const el of a.querySelectorAll('[aria-label]')) {
+        const m = (el.getAttribute('aria-label') || '').match(reCmt);
+        if (m) { commentCount = parseNum(m[1]); break; }
+      }
+      if (commentCount === -1) {
+        for (const el of a.querySelectorAll('span, a, div[role="button"]')) {
+          const t = (el.textContent || '').trim();
+          if (t.length > 40) continue;
+          const m = t.match(reCmt);
+          if (m) { commentCount = parseNum(m[1]); break; }
+        }
+      }
+
+      results.push({ url, postId, author, source, content, commentCount });
+    } catch (e) {}
+  }
+  return results;
+}
+"""
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# EXPAND "Xem thêm" — bài viết dài bị FB cắt ngắn và hiển thị nút "Xem thêm".
+# Trước khi extract, click hết các nút này để lấy full content.
+# Trả về số nút đã click (dùng để biết có cần đợi render hay không).
+#
+# Hỗ trợ các biến thể text: "Xem thêm" (vi), "See more" (en).
+# FB render nút này dưới dạng <div role="button"> với text CHÍNH XÁC.
+# ──────────────────────────────────────────────────────────────────────────────
+_JS_EXPAND_SEE_MORE = r"""
+() => {
+  const LABELS = ['Xem thêm', 'See more', 'Xem thêm…', 'See more…'];
+  const articles = document.querySelectorAll('[role="article"]');
+  let clicked = 0;
+  for (const a of articles) {
+    const btns = a.querySelectorAll('[role="button"]');
+    for (const btn of btns) {
+      const t = (btn.textContent || '').trim();
+      if (LABELS.includes(t)) {
+        try { btn.click(); clicked++; } catch (e) {}
+        break;  // mỗi article chỉ có 1 nút "Xem thêm" cho phần content
+      }
+    }
+  }
+  return clicked;
+}
+"""
+
+
 class PostScraper(BaseScraper):
     """Scroll feed Facebook và extract PostData từ mỗi article."""
 
@@ -339,7 +504,16 @@ class PostScraper(BaseScraper):
             List PostData (chưa dedup)
         """
         is_fanpage = mode == "fanpage"
-        js = _JS_EXTRACT_FANPAGE_POSTS if is_fanpage else _JS_EXTRACT_GROUP_POSTS
+        is_search = mode == "search"
+        if is_search:
+            # Mở rộng nội dung bị cắt ("Xem thêm") trước khi extract — chỉ áp dụng
+            # cho search mode để không ảnh hưởng tốc độ crawl group/fanpage.
+            await self._expand_see_more(page)
+            js = _JS_EXTRACT_SEARCH_POSTS
+        elif is_fanpage:
+            js = _JS_EXTRACT_FANPAGE_POSTS
+        else:
+            js = _JS_EXTRACT_GROUP_POSTS
         try:
             raw = await page.evaluate(js)
         except Exception as e:
@@ -352,8 +526,8 @@ class PostScraper(BaseScraper):
         posts: list[PostData] = []
         for item in raw:
             url = item.get("url", "")
-            if is_fanpage:
-                # Fanpage: dùng postId do JS sinh (đã xử lý pfbid / hash / posinset).
+            if is_fanpage or is_search:
+                # Fanpage & search: dùng postId do JS sinh (pfbid / hash / posinset).
                 post_id = item.get("postId", "") or extract_post_id(url)
             else:
                 post_id = extract_post_id(url) if url else ""
@@ -365,10 +539,29 @@ class PostScraper(BaseScraper):
                 post_id=post_id,
                 url=url,
                 author=clean_text(item.get("author", "") or ""),
+                source=clean_text(item.get("source", "") or "") if is_search else "",
                 content=clean_text(item.get("content", "") or ""),
                 comment_count=int(item.get("commentCount") or -1),
             ))
         return posts
+
+    async def _expand_see_more(self, page: Page) -> None:
+        """Click tất cả nút 'Xem thêm' / 'See more' trong các article để mở
+        rộng nội dung bị cắt. Đợi ngắn sau khi click để FB render xong full text.
+
+        Bỏ qua mọi exception — đây là bước best-effort, không được làm hỏng
+        extract chính nếu FB đổi DOM.
+
+        Args:
+            page: Playwright Page object
+        """
+        try:
+            clicked = await page.evaluate(_JS_EXPAND_SEE_MORE)
+            if clicked and clicked > 0:
+                # Đợi FB render xong phần content vừa mở rộng
+                await page.wait_for_timeout(400)
+        except Exception as e:
+            logger.debug(f"Lỗi expand 'Xem thêm': {e}")
 
     @staticmethod
     def _is_blocked(url: str) -> bool:

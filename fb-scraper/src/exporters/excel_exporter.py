@@ -67,12 +67,17 @@ class ExcelExporter:
         """Ghi dữ liệu bài viết vào sheet(s) Posts.
 
         Tự động tạo Posts_2, Posts_3, ... nếu vượt MAX_ROWS_PER_SHEET.
+        Cột "Nguồn" chỉ xuất hiện khi crawl theo từ khóa tìm kiếm (post.source có giá trị).
 
         Args:
             wb: Workbook đang ghi
             posts: List PostData
         """
-        headers = ["STT", "Post_ID", "Author", "Content", "URL"]
+        has_source = any(p.source for p in posts)
+        if has_source:
+            headers = ["STT", "Post_ID", "Author", "Nguồn", "Content", "URL"]
+        else:
+            headers = ["STT", "Post_ID", "Author", "Content", "URL"]
 
         sheet_idx = 1
         row_count = 0
@@ -87,7 +92,11 @@ class ExcelExporter:
                 row_count = 0
                 sheet_idx += 1
 
-            ws.append([stt, post.post_id, post.author, post.content, post.url])
+            if has_source:
+                row = [stt, post.post_id, post.author, post.source, post.content, post.url]
+            else:
+                row = [stt, post.post_id, post.author, post.content, post.url]
+            ws.append(row)
             self._style_data_row(ws, ws.max_row, len(headers))
             row_count += 1
             stt += 1

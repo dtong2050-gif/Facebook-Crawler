@@ -98,16 +98,19 @@ def url_to_page_name(url: str) -> str:
     """Chuyển Facebook URL thành tên ngắn gọn cho tên file.
 
     Args:
-        url: URL Facebook page/group
+        url: URL Facebook page/group hoặc search URL
 
     Returns:
         Tên ngắn, chỉ chứa chữ, số và underscore
 
     Examples:
-        "https://www.facebook.com/groups/12345" → "group_12345"
-        "https://www.facebook.com/vnexpress"   → "vnexpress"
+        "https://www.facebook.com/groups/12345"           → "group_12345"
+        "https://www.facebook.com/vnexpress"              → "vnexpress"
+        "https://www.facebook.com/search/posts/?q=nến+thơm" → "search_n_n_th_m"
     """
     try:
+        from urllib.parse import parse_qs
+
         parsed = urlparse(url)
         path = parsed.path.strip("/")
         parts = [p for p in path.split("/") if p]
@@ -116,6 +119,12 @@ def url_to_page_name(url: str) -> str:
             idx = parts.index("groups")
             if idx + 1 < len(parts):
                 return f"group_{parts[idx + 1][:40]}"
+
+        if "search" in parts:
+            q = parse_qs(parsed.query).get("q", ["unknown"])[0]
+            safe = re.sub(r"[^a-zA-Z0-9_]", "_", q)
+            safe = re.sub(r"_+", "_", safe).strip("_")
+            return f"search_{safe[:40]}" if safe else "search"
 
         name = parts[-1] if parts else "unknown"
     except Exception:
@@ -140,6 +149,7 @@ def extract_post_id(url: str) -> str:
         return ""
 
     patterns = [
+        r"/posts/(pfbid[0-9A-Za-z]+)",  # Fanpage pfbid (alphanumeric, trước pattern số)
         r"/posts/(\d+)",
         r"story_fbid=(\d+)",
         r"fbid=(\d+)",

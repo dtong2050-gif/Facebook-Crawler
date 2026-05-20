@@ -151,7 +151,7 @@
     <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
       <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Chế độ crawl</label>
 
-      <!-- Mode toggle: Group / Fanpage -->
+      <!-- Mode toggle: Group / Fanpage / Tìm kiếm -->
       <div class="inline-flex p-1 mb-4 bg-gray-800 border border-gray-700 rounded-lg">
         <button id="modeGroupBtn" type="button" onclick="setMode('group')"
           class="px-4 py-1.5 text-sm font-medium rounded-md transition bg-blue-600 text-white">
@@ -161,19 +161,28 @@
           class="px-4 py-1.5 text-sm font-medium rounded-md transition text-gray-400 hover:text-gray-200">
           Bài viết Fanpage
         </button>
+        <button id="modeSearchBtn" type="button" onclick="setMode('search')"
+          class="px-4 py-1.5 text-sm font-medium rounded-md transition text-gray-400 hover:text-gray-200">
+          Tìm kiếm từ khóa
+        </button>
       </div>
 
       <label id="urlLabel" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Link Group Facebook</label>
 
       <div class="flex gap-3">
         <div class="flex-1 relative">
-          <span class="absolute inset-y-0 left-3 flex items-center text-gray-500">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span id="inputIcon" class="absolute inset-y-0 left-3 flex items-center text-gray-500">
+            <!-- icon thay đổi theo mode: link (group/fanpage) hoặc search -->
+            <svg id="iconLink" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
             </svg>
+            <svg id="iconSearch" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
           </span>
-          <input id="groupUrl" type="url"
+          <input id="groupUrl" type="text"
             placeholder="https://www.facebook.com/groups/tengroup"
+            oninput="autoDetectMode(this.value)"
             class="fb-input w-full bg-gray-800 border border-gray-700 rounded-lg pl-9 pr-4 py-2.5 text-sm placeholder-gray-600 transition" />
         </div>
 
@@ -184,6 +193,17 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
           <span id="startLabel">Bắt đầu</span>
+        </button>
+      </div>
+
+      <!-- Cảnh báo + nút reset, chỉ hiện khi state bị kẹt ở 'running' -->
+      <div id="stuckBanner" class="hidden mt-3 px-3 py-2 bg-yellow-900/20 border border-yellow-800/40 rounded-lg flex items-center gap-2 text-xs text-yellow-300">
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.5 0L3.17 16.25A2 2 0 005 19z"/>
+        </svg>
+        <span class="flex-1">Có vẻ trạng thái crawl bị kẹt từ phiên trước. Bấm <b>Đặt lại</b> để bắt đầu crawl mới.</span>
+        <button onclick="resetState()" class="px-3 py-1 bg-yellow-700/40 hover:bg-yellow-700/60 border border-yellow-700 rounded text-yellow-100 font-medium">
+          Đặt lại
         </button>
       </div>
 
@@ -328,7 +348,7 @@ let clockTimer  = null;
 let elapsed     = 0;
 let lastLogLen  = 0;
 let isCrawling  = false;
-let crawlMode   = 'group';   // 'group' | 'fanpage'
+let crawlMode   = 'group';   // 'group' | 'fanpage' | 'search'
 
 /* ========== helpers ========== */
 
@@ -434,21 +454,37 @@ async function doLogin() {
 
 function setMode(mode) {
   if (isCrawling) return;          // không đổi chế độ khi đang crawl
-  crawlMode = mode === 'fanpage' ? 'fanpage' : 'group';
+  if (['group', 'fanpage', 'search'].includes(mode)) crawlMode = mode;
+  else crawlMode = 'group';
 
   const on  = 'bg-blue-600 text-white';
   const off = 'text-gray-400 hover:text-gray-200';
-  const g = el('modeGroupBtn'), f = el('modeFanpageBtn');
-  g.className = `px-4 py-1.5 text-sm font-medium rounded-md transition ${crawlMode === 'group' ? on : off}`;
-  f.className = `px-4 py-1.5 text-sm font-medium rounded-md transition ${crawlMode === 'fanpage' ? on : off}`;
+  el('modeGroupBtn').className   = `px-4 py-1.5 text-sm font-medium rounded-md transition ${crawlMode === 'group'   ? on : off}`;
+  el('modeFanpageBtn').className = `px-4 py-1.5 text-sm font-medium rounded-md transition ${crawlMode === 'fanpage' ? on : off}`;
+  el('modeSearchBtn').className  = `px-4 py-1.5 text-sm font-medium rounded-md transition ${crawlMode === 'search'  ? on : off}`;
+
+  const isSearch = crawlMode === 'search';
+  el('iconLink').classList.toggle('hidden', isSearch);
+  el('iconSearch').classList.toggle('hidden', !isSearch);
 
   if (crawlMode === 'fanpage') {
-    el('urlLabel').textContent      = 'Link Fanpage Facebook';
-    el('groupUrl').placeholder      = 'https://www.facebook.com/tenfanpage';
+    el('urlLabel').textContent = 'Link Fanpage Facebook';
+    el('groupUrl').placeholder = 'https://www.facebook.com/tenfanpage';
+  } else if (crawlMode === 'search') {
+    el('urlLabel').textContent = 'Từ khóa tìm kiếm';
+    el('groupUrl').placeholder = 'nến thơm, mỹ phẩm hữu cơ, cà phê...';
+    el('groupUrl').value = '';     // xóa URL cũ khi chuyển sang search
   } else {
-    el('urlLabel').textContent      = 'Link Group Facebook';
-    el('groupUrl').placeholder      = 'https://www.facebook.com/groups/tengroup';
+    el('urlLabel').textContent = 'Link Group Facebook';
+    el('groupUrl').placeholder = 'https://www.facebook.com/groups/tengroup';
   }
+}
+
+function autoDetectMode(url) {
+  if (crawlMode === 'search') return;   // đang ở tab Search → không auto-switch
+  if (!url || !url.includes('facebook.com')) return;
+  if (url.includes('/groups/')) setMode('group');
+  else setMode('fanpage');
 }
 
 function transitionToCrawler(userName) {
@@ -472,21 +508,35 @@ async function doLogout() {
 }
 
 async function startCrawl() {
-  const url         = el('groupUrl').value.trim();
+  const inputVal    = el('groupUrl').value.trim();
   const limit       = parseInt(el('postLimit').value)   || 100;
   const maxComments = parseInt(el('maxComments').value) || 0;
 
-  if (!url) {
-    el('groupUrl').classList.add('border-red-500');
-    setTimeout(() => el('groupUrl').classList.remove('border-red-500'), 1500);
-    return;
-  }
-  if (!url.includes('facebook.com/')) {
-    alert('Vui lòng nhập link Facebook hợp lệ.\nVí dụ:\n  https://www.facebook.com/groups/tengroup\n  https://www.facebook.com/tenpage');
-    return;
+  let url;
+  if (crawlMode === 'search') {
+    // Chế độ tìm kiếm: inputVal là từ khóa, cần tạo search URL
+    if (!inputVal) {
+      el('groupUrl').classList.add('border-red-500');
+      setTimeout(() => el('groupUrl').classList.remove('border-red-500'), 1500);
+      return;
+    }
+    url = 'https://www.facebook.com/search/posts/?q=' + encodeURIComponent(inputVal);
+  } else {
+    // Chế độ group / fanpage: inputVal là URL
+    url = inputVal;
+    if (!url) {
+      el('groupUrl').classList.add('border-red-500');
+      setTimeout(() => el('groupUrl').classList.remove('border-red-500'), 1500);
+      return;
+    }
+    if (!url.includes('facebook.com/')) {
+      alert('Vui lòng nhập link Facebook hợp lệ.\nVí dụ:\n  https://www.facebook.com/groups/tengroup\n  https://www.facebook.com/tenpage');
+      return;
+    }
   }
 
   hide('resultCard');
+  hide('stuckBanner');
   hideModal();
   show('progressCard');
   resetStats();
@@ -499,7 +549,19 @@ async function startCrawl() {
 
   const res = await api('/api/crawl', 'POST', { url, limit, max_comments: maxComments, mode: crawlMode });
   if (!res.success) {
-    alert(res.message || 'Không thể bắt đầu crawl');
+    // Backend báo có crawl đang chạy → đề nghị reset
+    if (res.message && res.message.includes('tiến trình')) {
+      const ok = confirm('Có vẻ trạng thái crawl cũ bị kẹt.\n\nBấm OK để đặt lại trạng thái và thử lại.');
+      if (ok) {
+        await api('/api/reset', 'POST');
+        resetBtn();
+        hide('progressCard');
+        // Người dùng có thể bấm Bắt đầu lại
+        return;
+      }
+    } else {
+      alert(res.message || 'Không thể bắt đầu crawl');
+    }
     resetBtn();
     return;
   }
@@ -523,7 +585,11 @@ async function resumeCrawl() {
 async function stopAndExport() {
   hideModal();
   await api('/api/stop', 'POST');
-  // Không reset UI ngay — poll sẽ tự update khi backend xuất xong Excel
+  // Mở khoá toàn bộ UI ngay (mode toggle + nút Bắt đầu), không cần đợi
+  // backend hoàn tất stop+export. Polling vẫn tiếp tục để cập nhật progress
+  // + show resultCard khi xong. Nếu user crawl mới trong khi backend chưa
+  // stop xong → /api/crawl trả 409 → confirm dialog đề nghị đặt lại.
+  resetBtn();
 }
 
 function showModal() {
@@ -601,6 +667,7 @@ async function pollProgress(limit) {
     stopPoll();
     resetBtn();
     hideModal();
+    hide('stuckBanner');
 
     if ((data.status === 'done' || data.status === 'stopped') && data.file_path) {
       const isPartial = data.status === 'stopped';
@@ -664,6 +731,17 @@ async function downloadFile() {
   window.location.href = '/api/download';
 }
 
+/* ---- reset state (khi UI bị kẹt ở 'running') ---- */
+async function resetState() {
+  stopPoll();
+  await api('/api/reset', 'POST');
+  hide('stuckBanner');
+  hide('progressCard');
+  hide('resultCard');
+  resetBtn();
+  resetStats();
+}
+
 /* ---- keyboard shortcut ---- */
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
@@ -678,7 +756,10 @@ document.addEventListener('keydown', e => {
     if (p.user_name) {
       transitionToCrawler(p.user_name);
       if (p.status === 'running') {
+        // State 'running' khi page mới load: có thể đang crawl thật, hoặc state
+        // bị kẹt từ phiên cũ. Hiện banner cho phép người dùng đặt lại nếu kẹt.
         show('progressCard');
+        show('stuckBanner');
         isCrawling = true;
         el('startBtn').disabled = true;
         el('startBtn').classList.add('opacity-50','cursor-not-allowed');

@@ -22,6 +22,7 @@ class PostData:
     post_id: str
     url: str
     author: str = ""
+    source: str = ""  # group/fanpage nguồn (chỉ có khi crawl theo từ khóa tìm kiếm)
     content: str = ""
     comment_count: int = -1  # -1 = unknown; 0 = confirmed empty from feed
     scraped_at: datetime = field(default_factory=datetime.now)
