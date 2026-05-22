@@ -11,7 +11,12 @@ from flask_cors import CORS
 # Thêm src/ vào sys.path để import các module
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from browser.anti_detect import natural_scroll, random_delay
+from browser.anti_detect import (
+    get_delay_multiplier,
+    natural_scroll,
+    random_delay,
+    set_delay_multiplier,
+)
 from browser.session import BrowserSession, LoginError
 from config import Config
 from exporters.excel_exporter import ExcelExporter
@@ -36,6 +41,24 @@ def run_async(coro, timeout: float = 120):
 def fire_async(coro) -> None:
     """Submit coroutine vào background loop mà không chờ kết quả."""
     asyncio.run_coroutine_threadsafe(coro, _bg_loop)
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Tốc độ crawl — hệ số nhân áp dụng cho mọi delay & sleep giữa các action.
+#   slow   ≈ x1.8  → an toàn nhất, ít bị FB phát hiện
+#   normal ≈ x1.0  → mặc định
+#   fast   ≈ x0.55 → nhanh hơn nhưng dễ bị block/checkpoint
+# ──────────────────────────────────────────────────────────────────────────────
+SPEED_MULT: dict[str, float] = {
+    "slow":   1.8,
+    "normal": 1.0,
+    "fast":   0.55,
+}
+
+
+async def _sleep_scaled(seconds: float) -> None:
+    """asyncio.sleep nhưng nhân với hệ số tốc độ hiện tại."""
+    await asyncio.sleep(seconds * get_delay_multiplier())
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -271,10 +294,10 @@ async def _async_crawl(
                         window.scrollTo(0, document.body.scrollHeight);
                     }"""
                 )
-                await asyncio.sleep(0.4)
+                await _sleep_scaled(0.4)
                 await _page.mouse.wheel(0, 3000)
                 # Stuck lâu → đợi lâu hơn cho FB render xong batch mới
-                await asyncio.sleep(2.2 if no_new_streak >= 3 else 1.4)
+                await _sleep_scaled(2.2 if no_new_streak >= 3 else 1.4)
                 scroll_num += 1
                 continue
 
@@ -287,18 +310,18 @@ async def _async_crawl(
             elif no_new_streak <= 4:
                 # Stuck nhẹ — wheel event mạnh (FB cần wheel events thật)
                 await _page.mouse.wheel(0, 3000)
-                await asyncio.sleep(1.5)
+                await _sleep_scaled(1.5)
             else:
                 # Stuck nặng — kết hợp nhiều chiến lược
                 await _page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                await asyncio.sleep(0.3)
+                await _sleep_scaled(0.3)
                 try:
                     await _page.keyboard.press("End")
                 except Exception:
                     pass
-                await asyncio.sleep(0.3)
+                await _sleep_scaled(0.3)
                 await _page.mouse.wheel(0, 3500)
-                await asyncio.sleep(2.0)
+                await _sleep_scaled(2.0)
             scroll_num += 1
 
         posts = posts[:limit]
@@ -563,15 +586,19 @@ def api_crawl():
     max_comments = min(int(data.get("max_comments") or 0), 2_000)
     mode_raw = (data.get("mode") or "group").strip()
     mode = mode_raw if mode_raw in ("group", "fanpage", "search") else "group"
+    speed_raw = (data.get("speed") or "normal").strip().lower()
+    speed = speed_raw if speed_raw in SPEED_MULT else "normal"
 
     if not url:
         return jsonify(success=False, message="Vui lòng nhập link"), 400
 
     _stop_flag.clear()
     _pause_flag.clear()
+    set_delay_multiplier(SPEED_MULT[speed])
     _set(status="running", posts=0, comments=0, logs=[], file_path=None, error=None)
     mode_label = {"fanpage": "Fanpage", "search": "Tìm kiếm từ khóa"}.get(mode, "Group")
-    _log(f"Bắt đầu crawl ({mode_label}): {url}")
+    speed_label = {"slow": "Chậm (an toàn)", "fast": "Nhanh (rủi ro cao)"}.get(speed, "Bình thường")
+    _log(f"Bắt đầu crawl ({mode_label}) · Tốc độ: {speed_label} · {url}")
 
     fire_async(_async_crawl(url, limit, max_comments, mode))
     return jsonify(success=True)

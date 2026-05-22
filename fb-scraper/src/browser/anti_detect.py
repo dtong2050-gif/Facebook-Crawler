@@ -30,6 +30,22 @@ DESKTOP_USER_AGENTS: list[str] = [
 ]
 
 
+# Hệ số nhân áp dụng cho toàn bộ delay (chậm/bình thường/nhanh). Đặt qua
+# set_delay_multiplier() trước khi crawl bắt đầu.
+_DELAY_MULT: float = 1.0
+
+
+def set_delay_multiplier(mult: float) -> None:
+    """Đặt hệ số nhân cho random_delay (clamp [0.2, 5.0])."""
+    global _DELAY_MULT
+    _DELAY_MULT = max(0.2, min(5.0, float(mult)))
+
+
+def get_delay_multiplier() -> float:
+    """Lấy hệ số nhân hiện tại — dùng để scale các asyncio.sleep ngoài random_delay."""
+    return _DELAY_MULT
+
+
 async def random_delay(min_seconds: float = 2.0, max_seconds: float = 5.0) -> None:
     """Delay ngẫu nhiên giữa các action để tránh bị detect.
 
@@ -37,8 +53,8 @@ async def random_delay(min_seconds: float = 2.0, max_seconds: float = 5.0) -> No
         min_seconds: Thời gian tối thiểu (giây)
         max_seconds: Thời gian tối đa (giây)
     """
-    delay = random.uniform(min_seconds, max_seconds)
-    logger.debug(f"Delay {delay:.2f}s")
+    delay = random.uniform(min_seconds, max_seconds) * _DELAY_MULT
+    logger.debug(f"Delay {delay:.2f}s (mult={_DELAY_MULT:.2f})")
     await asyncio.sleep(delay)
 
 
